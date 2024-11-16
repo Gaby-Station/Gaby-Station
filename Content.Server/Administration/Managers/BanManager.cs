@@ -57,6 +57,8 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
         _userDbData.AddOnLoadPlayer(CachePlayerData);
         _userDbData.AddOnPlayerDisconnect(ClearPlayerData);
+
+        InitializeDiscord(); // Gabystation - Ban webhook
     }
 
     private async Task CachePlayerData(ICommonSession player, CancellationToken cancel)
@@ -184,6 +186,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
         _sawmill.Info(logMessage);
         _chat.SendAdminAlert(logMessage);
+        SendServerBanWebhook(banDef, targetName, adminName); // Gabystation - ban webhook
 
         KickMatchingConnectedPlayers(banDef, "newly placed ban");
     }
