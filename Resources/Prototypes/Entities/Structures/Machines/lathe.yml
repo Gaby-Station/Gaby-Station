@@ -208,6 +208,10 @@
       - ClothingHeadHatCone
       - FreezerElectronics
       - ToolboxMechanical # Goobstation - Recycle update
+      # Begin Delta-V additions
+      - CassetteTape
+      - TapeRecorder
+      # End Delta-V additions
   - type: EmagLatheRecipes
     emagStaticRecipes:
       - BoxLethalshot

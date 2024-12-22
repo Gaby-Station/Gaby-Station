@@ -45,6 +45,9 @@
   - TowelColorSilver
   - TowelColorWhite
   - TowelColorYellow
+  # Begin DeltaV Additions
+  - TapeRecorder
+  # End DeltaV Additions
 
 - type: loadoutGroup
   id: Glasses
