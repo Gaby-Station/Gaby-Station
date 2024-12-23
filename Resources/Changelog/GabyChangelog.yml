@@ -73,5 +73,10 @@ Entries:
   changes:
     - type: Add
       message: Impressora de documentos (cherry-picked)
+- author: Zequin (kenny Lina) (Felipealmeidaz)
+  time: '2024-12-22T12:21:42.0000000+00:00'
+  changes:
+    - type: Add
+      message: Tradução do ''guide-book e Sever-Info'' (inicial)
 Name: GabyStation
 Order: -2
