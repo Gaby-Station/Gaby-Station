@@ -74,29 +74,29 @@
     <GuideEntityEmbed Entity="JetpackCaptainFilled" Caption=""/>
     <GuideEntityEmbed Entity="NukeDisk" Caption=""/>
   </Box>
-  - Roubar o [color=#5b97bc]Chefe Médico[/color]'s [bold]hiposspray[/bold] ou [bold]monitor de tripulação portátil[/bold].
+  - Roubar o [bold]hiposspray[/bold] do [color=#5b97bc]Chefe Médico[/color] ou [bold]monitor de tripulação portátil[/bold].
   <Box>
     <GuideEntityEmbed Entity="Hypospray" Caption=""/>
     <GuideEntityEmbed Entity="HandheldCrewMonitorEmpty" Caption=""/>
   </Box>
-  - Roubar o [color=#c96dbf]Diretor de Pesquisa[/color]'s [bold]traje experimental[/bold] ou [bold]teleportador manual[/bold].
+  - Roubar o [bold]traje experimental[/bold] do [color=#c96dbf]Diretor de Pesquisa[/color] ou [bold]teleportador manual[/bold].
   <Box>
     <GuideEntityEmbed Entity="ClothingOuterHardsuitRd" Caption=""/>
     <GuideEntityEmbed Entity="HandTeleporter" Caption=""/>
   </Box>
-  - Roubar o [color=#cb0000]Chefe de Segurança[/color]'s [bold]espingarda de energia[/bold].
+  - Roubar a [bold]espingarda de energia[/bold] do [color=#cb0000]Chefe de Segurança[/color].
   <Box>
     <GuideEntityEmbed Entity="WeaponEnergyShotgun" Caption=""/>
   </Box>
-  - Roubar o [color=#f39f27]Chefe de Engenharia[/color]'s [bold]botas magnéticas avançadas[/bold].
+  - Roubar as [bold]botas magnéticas avançadas[/bold] do [color=#f39f27]Chefe de Engenharia[/color].
   <Box>
     <GuideEntityEmbed Entity="ClothingShoesBootsMagAdv" Caption=""/>
   </Box>
-  - Roubar o [color=#b18644]Mestre de Armazém[/color]'s [bold]placa digital de requisição[/bold].
+  - Roubar a [bold]placa digital de requisição[/bold] do [color=#b18644]Mestre de Armazém[/color].
   <Box>
     <GuideEntityEmbed Entity="BoxFolderQmClipboard" Caption=""/>
   </Box>
-  - Matar Ian, o [color=#9fed58]Chefe de Pessoal[/color]'s cachorro, e obter a [bold]carne de corgi[/bold].
+  - Matar Ian, o cachorro do [color=#9fed58]Chefe de Pessoal[/color], e obter a [bold]carne de corgi[/bold].
   <Box>
     <GuideEntityEmbed Entity="MobCorgiIan" Caption=""/>
     <GuideEntityEmbed Entity="FoodMeatCorgi" Caption=""/>
