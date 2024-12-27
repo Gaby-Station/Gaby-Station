@@ -16,11 +16,11 @@
   path:
     path: /Audio/_Gabystation/Jukebox/DigitalCircus.ogg
 
-- type: jukebox
-  id: TodoGay
-  name: Marcelo Adnet - Todo Mundo é Gay
-  path:
-    path: /Audio/_Gabystation/Jukebox/gay.ogg
+#- type: jukebox
+#  id: TodoGay
+#  name: Marcelo Adnet - Todo Mundo é Gay
+#  path:
+#    path: /Audio/_Gabystation/Jukebox/gay.ogg
 
 - type: jukebox
   id: CheiaManias
