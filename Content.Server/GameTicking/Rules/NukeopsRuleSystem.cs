@@ -49,6 +49,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     // goob edit end
     [Dependency] private readonly KidnapHeadsConditionSystem _kidnapSystem = default!; // DeltaV
+    [Dependency] private readonly SharedMapSystem _map = default!;
 
     [ValidatePrototypeId<CurrencyPrototype>]
     private const string TelecrystalCurrencyPrototype = "Telecrystal";
@@ -175,12 +176,17 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     // DeltaV - Kidnap heads nukie objective
     private void OnFTLCompleted(Entity<NukeOpsShuttleComponent> ent, ref FTLCompletedEvent args)
     {
+
+
         // Be careful especially with the GetOutpost function. This entire thing is built on a wobbly house of cards.
         var query = QueryActiveRules();
         while (query.MoveNext(out var uid, out _, out var nukeops, out _))
         {
-            var outpost = GetOutpost(uid);
-            if (outpost != null && int.Parse(args.MapUid.ToString())-1 == int.Parse(outpost.Value.ToString()))
+            if (!TryComp<RuleGridsComponent>(uid, out var ruleGridsComp) || ruleGridsComp.Map == null)
+                return;
+
+            // Make sure your on the same map as the nukie outposts map.
+            if (args.MapUid == _map.GetMap(ruleGridsComp.Map.Value))
             {
                 // Now check of the kidnap heads objective is complete... (Yes this is suspect)
                 var objectives = EntityQueryEnumerator<KidnapHeadsConditionComponent>();
