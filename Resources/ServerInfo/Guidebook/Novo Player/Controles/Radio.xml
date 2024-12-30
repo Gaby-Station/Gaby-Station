@@ -1,0 +1,64 @@
+<Document>
+# Canais de Fala e Texto
+Falar é uma parte chave do Space Station 14. Você pode pressionar [keybind="FocusChatInputWindow"/] para pular para a caixa de texto.
+
+A palavra ao lado da caixa de texto é o [color=#a4885c]canal de texto[/color] para o qual você está prestes a enviar a mensagem, ou melhor, como você está prestes a dizer o que você digitou.
+
+Local é a fala normal em volume normal.
+
+Whisper só pode ser ouvido quando alguém está por perto. Você automaticamente sussurra para o seu rádio ao enviar mensagens por ele.
+
+Emotes são gestos que você faz. Podem ser recebidos por qualquer pessoa que não esteja cega. Você frequentemente verá mimes fazendo muitos emotes.
+
+Mensagens de sussurro podem ser enviadas começando sua mensagem com [color=#a4885c][keybind="FocusWhisperChatWindow"/][/color] e Emotes podem ser enviados começando sua mensagem com ([color=#a4885c]@[/color]).
+Você também pode alternar entre todos esses canais de texto pressionando [keybind="CycleChatChannelForward"/].
+
+As pessoas podem não conseguir entender tudo o que você está dizendo se estiver muito longe delas. Isso é especialmente importante se você estiver sussurrando.
+
+## Rádio
+
+Seu rádio permite que você se comunique por toda a estação e com seu [color=#a4885c]departamento[/color].
+
+<Box>
+  <GuideEntityEmbed Entity="ClothingHeadsetGrey"/>
+</Box>
+
+Para enviar uma mensagem [color=#a4885c]para toda a estação[/color] pelo rádio, use o canal [color=#32cd32]Comum[/color] iniciando seu texto com [color=#32cd32]ponto e vírgula (;)[/color].
+Pessoas que estiverem bem ao seu lado podem ouvir partes da sua mensagem no rádio, mesmo que não tenham acesso ao canal de rádio relevante. Fique atento a ouvintes furtivos.
+
+## Rádio Departamental
+
+Você pode enviar mensagens pelos canais de rádio do seu departamento usando [color=#32cd32]dois pontos (:)[/color] seguidos pela letra do departamento, desde que esteja usando um headset com a chave de criptografia do seu departamento.
+
+Examine seu headset para ver os canais departamentais disponíveis para você.
+
+<Box>
+  <GuideEntityEmbed Entity="ClothingHeadsetEngineering"/>
+</Box>
+
+Examinando um headset de engenharia não modificado, você verá os prefixos para os canais [color=#32cd32]Comum[/color] e [color=#f37746]Engenharia[/color].
+
+Também é possível usar [color=#a4885c]:h[/color]. Esta tecla de atalho irá automaticamente para o canal de rádio do seu departamento.
+Por exemplo, se você for um Engenheiro da Estação, então [color=#a4885c]:h[/color] irá automaticamente para [color=#f37746]:e[/color].
+
+## Chaves de Criptografia
+[color=#a4885c]Chaves de criptografia[/color] dão acesso ao canal correspondente.
+
+Examinando nosso headset de engenharia de antes, vemos [color=#32cd32]Comum[/color] e [color=#f37746]Engenharia[/color] porque o headset de um engenheiro começa com essas [color=#a4885c]chaves de criptografia[/color].
+
+<Box>
+  <GuideEntityEmbed Entity="EncryptionKeyCommon"/>
+  <GuideEntityEmbed Entity="EncryptionKeyEngineering"/>
+</Box>
+
+Você pode retirar as chaves de criptografia usando uma [color=#a4885c]chave de fenda[/color] em um headset. Novas chaves de criptografia são colocadas nos headsets clicando em um com uma chave de criptografia na sua mão.
+
+Todos os membros de comando têm chaves extras de criptografia relevantes, mas você também pode solicitar uma no escritório do HoP quando estiver mudando de cargo.
+
+## Canais OOC
+Canais OOC (fora de personagem) existem fora do mundo do jogo. Eles são LOOC, OOC e Dead chat.
+
+LOOC está disponível durante as rodadas, OOC normalmente está desligado até o final da rodada e você só pode ver e falar no Dead chat quando você estiver, bem, morto.
+
+Não discuta a rodada atual no Discord ou no OOC se ele estiver ligado durante a rodada.
+</Document>

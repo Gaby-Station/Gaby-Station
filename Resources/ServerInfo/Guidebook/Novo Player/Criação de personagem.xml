@@ -1,0 +1,70 @@
+<Document>
+# Dicas Importantes para Criação de Personagens
+Este é um guia para as partes da criação de personagens que afetam a jogabilidade.
+
+[textlink="Para um guia sobre como fazer alterações cosméticas, clique aqui." link="YourFirstCharacter"]
+
+## Prioridade de Spawn
+Isso afeta onde você irá aparecer ao entrar no jogo depois que a rodada já tiver começado.
+
+Escolher "Chegadas" fará com que você apareça em uma estação separada, onde você aguarda por um transporte que o levará até a estação principal.
+
+Escolher "Criossono" fará com que você acorde em uma câmara de criossono já na estação.
+
+Escolher "Nenhum" irá escolher para você ou escolher a única opção de spawn disponível para a estação atual.
+
+Esta é uma escolha principalmente arbitrária. Você pode deixar isso em "Nenhum" com segurança e não sofrerá grandes inconvenientes.
+
+## Trabalhos
+Você pode definir suas preferências de trabalho no lobby. Embora isso não [color=#a4885c]garanta[/color] sua posição, alguém que deseja o trabalho será [color=#a4885c]selecionado aleatoriamente[/color] no início da rodada.
+Você tem uma chance de ser escolhido para seu trabalho de alta prioridade primeiro, depois os de média prioridade, e por último, os de baixa prioridade.
+Você também tem a opção de ser automaticamente um passageiro ou ser enviado de volta ao lobby caso não seja escolhido para nenhum dos seus trabalhos preferidos.
+
+Alguns trabalhos ficam bloqueados até que você tenha jogado o suficiente em outros trabalhos de nível iniciante.
+
+[textlink="Para mais informações sobre os trabalhos, clique aqui." link="Jobs"]
+
+## Equipamentos de Trabalho
+Você também pode escolher [color=#a4885c]equipamentos[/color] para cada trabalho. Equipamentos são os itens de roupa e acessórios com os quais você aparece ao entrar no jogo. Alguns itens de equipamento ficam bloqueados até que você tenha jogado o suficiente.
+Isso pode ter vários efeitos na jogabilidade, pois alguns itens de roupa têm [color=#a4885c]proteção contra danos[/color] ou [color=#a4885c]diminuem sua velocidade de movimento[/color]. Isso se aplica especialmente a Comando e Segurança.
+
+Você também pode escolher com que tipo de mochila irá aparecer.
+[color=#a4885c]Mochilas[/color] são de tamanho médio, mas conseguem carregar itens grandes com mais facilidade. [color=#a4885c]Bolsas[/color] têm mais espaço total do que mochilas, mas têm dificuldades para carregar itens grandes. [color=#a4885c]Bolsões[/color] são grandes, mas trazem uma penalidade de movimento.
+
+## Antagonistas
+Ativar a opção [color=#a4885c]antagonista[/color] colocará você na lista de possíveis antagonistas no início da rodada. Isso não garante que você será escolhido para o papel de antagonista, não use isso como desculpa para jogar contra a estação!
+Em vez disso, assim como as prioridades de trabalho, um número limitado de jogadores será escolhido aleatoriamente entre os jogadores elegíveis. Se você for membro do comando ou oficial de segurança, você não poderá ser escolhido para o papel de antagonista.
+
+[textlink="Para mais informações sobre antagonistas, clique aqui." link="Antagonists"]
+
+Entrar em múltiplos jogos ou se desconectar/gostar de suicidar-se quando não for escolhido para um papel de antagonista é conhecido como "antag-rolling" e é contra as regras.
+Muitas pessoas esperam pacientemente a sua vez de ser antagonista, então [color=#a4885c]pedimos gentilmente que você se abstenha de se inscrever para um papel de antagonista se não estiver preparado[/color].
+
+## Atributos
+Atributos de fala alteram sua fala, às vezes de forma extrema.
+
+Eles incluem:
+- Sem sotaque (desativa o sotaque da sua espécie selecionada)
+- Sotaque de cowboy (substituição de palavras, parceiro)
+- Lisp frontal ("s" é substituído por "th")
+- Sotaque italiano (Mamma-mia, substituição de palavras)
+- Mentiroso patológico (substituição de palavras, muda palavras como "sim" para "não")
+- Sotaque de pirata (Arrgh, substituição de palavras)
+- Ansiedade social (g-g-gagueira)
+- Sotaque sulista (substitui "-ing" por "-in'" e mudanças semelhantes)
+
+Você deve estar confortável com uma fala normal ou com um sotaque leve como Ansiedade Social ou Sotaque Sulista antes de pegar sotaques mais pesados como Italiano ou Cowboy.
+
+Existem também atributos de deficiência. Familiarize-se com o jogo e o fluxo do jogo antes de escolher um desses, pois alguns podem se tornar difíceis para iniciantes.
+
+Eles incluem:
+- Cegueira (limita severamente sua visão)
+- Bêbado leve (você fica bêbado mais rápido e sofre mais com os efeitos negativos do álcool)
+- Mudo (você não pode falar ou sussurrar, mas ainda pode se comunicar por gestos e papel e caneta)
+- Narcolepsia (você adormece aleatoriamente em momentos imprevisíveis e muitas vezes inconvenientes)
+- Pacifista (você não pode bater, atirar ou lançar objetos pontiagudos nas pessoas)
+- Paracusia (você às vezes ouve sons que não são reais)
+- Miopia (limita um pouco sua visão sem óculos de prescrição)
+- Ronco (você faz barulhos altos de ronco quando está dormindo)
+- Irreanimável (você não pode ser reanimado quando encontrar sua morte prematura)
+</Document>

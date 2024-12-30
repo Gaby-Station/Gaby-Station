@@ -1,0 +1,62 @@
+<Document>
+# Controles
+
+<Box>Você pode alterar suas teclas de atalho a qualquer momento aqui:</Box>
+<Box Orientation="Vertical"><CommandButton Text="ui-options-tab-controls" Command="options 1"/></Box>
+
+## Movimento
+Você pode se mover pelo mundo do jogo usando [color=yellow][bold][keybind="MoveUp"][keybind="MoveLeft"][keybind="MoveDown"][keybind="MoveRight"][/bold][/color].
+Ao segurar [color=yellow][bold][keybind="Walk"][/bold][/color], você andará, impedindo que deslize no chão.
+
+Você pode mudar a caminhada para [color=cyan]alternar[/color] no menu de controles.
+
+[color=cyan]Puxar[/color] objetos é feito com [color=yellow][bold][keybind="TryPullObject"][/bold][/color].
+Enquanto puxa, você pode arrastar um objeto até o cursor do mouse usando [color=yellow][bold][keybind="MovePulledObject"][/bold][/color].
+Pressionando [color=yellow][bold][keybind="ReleasePulledObject"][/bold][/color] solta o item que você está arrastando.
+
+Você pode se encontrar em uma situação de [color=#EB2D3A][bold]gravidade baixa.[/bold][/color]
+Isso fará com que seu personagem flutue enquanto se move.
+Quando fora da estação, você não será capaz de controlar sua direção.
+[bold]Arremessar objetos[/bold] ou [bold]sprayar um extintor de incêndio[/bold] pode ajudar a se impulsionar enquanto estiver nesse estado.
+
+## Interações
+Interações gerais são feitas com [color=yellow][bold][keybind="Use"][/bold][/color].
+Elas são [bold]contextuais[/bold] e são afetadas pelo item em sua mão ativa.
+Você também pode usar [color=yellow][bold][keybind="AltActivateItemInWorld"][/bold][/color] para realizar [bold]interações alternativas[/bold].
+
+Para realizar [color=cyan]interações básicas[/color], use [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color].
+Isso é como [bold]interagir com nada em mãos[/bold].
+Pressionar [color=yellow][bold][keybind="ActivateItemInHand"][/bold][/color] tem o mesmo efeito com o item atualmente em mãos.
+É mais utilizado para realizar interações básicas enquanto segura algo, como abrir uma porta quando suas mãos estão ocupadas.
+
+Passar o cursor sobre uma entidade e pressionar [color=yellow][bold][keybind="UIRightClick"/][/bold][/color] abre o [color=cyan]menu contextual[/color].
+Isso não só permite que você organize grandes pilhas de itens, mas também realizar [bold]interações adicionais.[/bold]
+
+[color=cyan]Examinar[/color] coisas é feito com [color=yellow][bold][keybind="ExamineEntity"][/bold][/color], o que abre uma janela com o nome do objeto, uma pequena descrição e outros detalhes relevantes.
+[italic]Examinar coisas ao seu redor pode ajudá-lo a aprender o que elas fazem e quais propriedades elas têm[/italic].
+
+## Mãos
+Usar [color=yellow][bold][keybind="Use"][/bold][/color] em itens no mundo vai pegá-los e colocá-los em sua mão ativa.
+Você pode trocar a mão ativa atual usando [color=yellow][bold][keybind="SwapHands"][/bold][/color].
+
+Você pode [color=cyan]dropar[/color] o item que está segurando usando [color=yellow][bold][keybind="Drop"][/bold][/color] ou alternativamente [color=cyan]arremessá-lo[/color] até seu cursor com [color=yellow][bold][keybind="ThrowItemInHand"][/bold][/color].
+
+## Inventário
+Você pode [color=cyan]abrir[/color] seu inventário usando [color=yellow][bold][keybind="OpenInventoryMenu"][/bold][/color].
+Cada slot no seu HUD pode ser preenchido com um [bold]item[/bold] ou [bold]peça de roupa[/bold].
+
+Dois dos slots da barra de atalhos correspondem à sua [bold]bolsa e cinto[/bold].
+Você pode abri-los usando [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color] neles ou clicando no ícone no [bold]canto inferior direito[/bold].
+
+Pressionar [color=yellow][bold][keybind="MoveStoredItem"][/bold][/color] vai [color=cyan]tirar um item[/color] da bolsa.
+Segurando a tecla você pode [color=cyan]arrastar[/color] o item para outro lugar.
+Enquanto arrasta, pressionando [color=yellow][bold][keybind="RotateStoredItem"][/bold][/color] vai [color=cyan]rotacionar[/color] o item.
+
+Você ainda pode fazer todas as interações regulares com os itens na sua bolsa, incluindo [color=cyan]examinar[/color] e abrir o [color=cyan]menu contextual[/color].
+
+## Câmera
+A câmera pode [color=cyan]aproximar[/color] e [color=cyan]afastar[/color] com [color=yellow][bold][keybind="ZoomIn"][/bold][/color] e [color=yellow][bold][keybind="ZoomOut"][/bold][/color] e pode ser resetada com [color=yellow][bold][keybind="ResetZoom"][/bold][/color].
+Similarmente, você pode [color=cyan]rotacioná-la[/color] para a esquerda e para a direita com [color=yellow][bold][keybind="CameraRotateLeft"][/bold][/color] e [color=yellow][bold][keybind="CameraRotateRight"][/bold][/color].
+Você pode centralizá-la na rotação da grade usando [color=yellow][bold][keybind="CameraReset"][/bold][/color].
+
+</Document>
