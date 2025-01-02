@@ -20,7 +20,7 @@ accent-cowboy-words-7 = animais
 accent-cowboy-replacement-7 = criaturas
 
 accent-cowboy-words-8 = prender  
-accent-cowboy-replacement-8 = laço  
+accent-cowboy-replacement-8 = laço
 
 accent-cowboy-words-9 = preso
 accent-cowboy-replacement-9 = lassoed
