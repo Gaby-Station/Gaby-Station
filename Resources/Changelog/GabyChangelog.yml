@@ -83,5 +83,15 @@ Entries:
     changes:
       - type: Add
         message: Tradução inicial do "Guide Book".
+  - author: AgentePanela
+    time: "2025-01-02T21:30:00.0000000+00:00"
+    changes:
+      - type: Tweak
+        message: Sotaquee Ohio agora é Xique-Xique.
+  - author: AgentePanela
+    time: "2025-01-02T21:30:00.0000000+00:00"
+    changes:
+      - type: Add
+        message: Pronome neutro.
 Name: GabyStation
 Order: -2
