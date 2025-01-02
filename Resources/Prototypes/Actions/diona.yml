@@ -21,4 +21,4 @@
       sprite: Mobs/Species/Diona/parts.rsi
       state: full
     event: !type:ReformEvent {}
-    useDelay: 120 # Once every 2 minutes. Keep them dead for a fair bit before reforming
+    useDelay: 120 # Gabystation - Once every 2 minutes. Keep them dead for a fair bit before reforming
