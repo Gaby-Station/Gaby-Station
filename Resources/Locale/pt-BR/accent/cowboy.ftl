@@ -8,7 +8,7 @@ accent-cowboy-words-3 = Aliens
 accent-cowboy-replacement-3 = criaturas espaciais
 
 accent-cowboy-words-4 = emboscada
-accent-cowboy-replacement-4 = golpe de arbusto  
+accent-cowboy-replacement-4 = em bosque, nada
 
 accent-cowboy-words-5 = Bravo  
 accent-cowboy-replacement-5 = furioso  
