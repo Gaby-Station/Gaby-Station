@@ -329,7 +329,7 @@ accent-ohio-words-100 = sm
 accent-ohio-words-replace-100 = cristal magico
 
 accent-ohio-words-101 = oficial
-accent-ohio-words-replace-101 = xandão
+accent-ohio-words-replace-101 = trabalhador
 
 accent-ohio-words-102 = cling
 accent-ohio-words-replace-102 = shapeshifting ohioan
