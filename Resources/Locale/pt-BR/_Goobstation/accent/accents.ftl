@@ -227,10 +227,10 @@ accent-ohio-words-66 = engenharia
 accent-ohio-words-replace-66 = enel
 
 accent-ohio-words-67 = eng
-accent-ohio-words-replace-67 = tecnico de internet
+accent-ohio-words-replace-67 = eletricista da enel
 
 accent-ohio-words-68 = engs
-accent-ohio-words-replace-68 = tecnicos de internet
+accent-ohio-words-replace-68 = eletricistas da enel
 
 accent-ohio-words-69 = med
 accent-ohio-words-replace-69 = SUS
@@ -286,44 +286,44 @@ accent-ohio-words-replace-85 = hacking like in a video game
 accent-ohio-words-86 = robust
 accent-ohio-words-replace-86 = cooking
 
-accent-ohio-words-87 = die
-accent-ohio-words-replace-87 = get unalived
+accent-ohio-words-87 = perma
+accent-ohio-words-replace-87 = carandiru
 
-accent-ohio-words-88 = died
-accent-ohio-words-replace-88 = was unalived
+accent-ohio-words-88 = permabrig
+accent-ohio-words-replace-88 = carandiru
 
-accent-ohio-words-89 = goddamn
-accent-ohio-words-replace-89 = gyattdamn
+accent-ohio-words-89 = julgamento 
+accent-ohio-words-replace-89 = audiência do xandão
 
-accent-ohio-words-90 = godamn
-accent-ohio-words-replace-90 = gyattdamn
+accent-ohio-words-90 = juiz
+accent-ohio-words-replace-90 = xandão
 
-accent-ohio-words-91 = goddamned
-accent-ohio-words-replace-91 = gyatdamned
+accent-ohio-words-91 = meretissimo
+accent-ohio-words-replace-91 = alexandre de moraes
 
-accent-ohio-words-92 = goddang
-accent-ohio-words-replace-92 = gyattdang
+accent-ohio-words-92 = julgar
+accent-ohio-words-replace-92 = xandonar
 
-accent-ohio-words-93 = fuck
-accent-ohio-words-replace-93 = skibidi
+accent-ohio-words-93 = advogado
+accent-ohio-words-replace-93 = dr. saul goodman
 
-accent-ohio-words-94 = shit
-accent-ohio-words-replace-94 = skibidi
+accent-ohio-words-94 = excelência
+accent-ohio-words-replace-94 = alexandre de moraes
 
-accent-ohio-words-95 = im high
-accent-ohio-words-replace-95 = im tweaking
+accent-ohio-words-95 = excelencia
+accent-ohio-words-replace-95 = alexandre de moraes
 
-accent-ohio-words-96 = i'm high
-accent-ohio-words-replace-96 = i'm tweaking
+accent-ohio-words-96 = ladrão
+accent-ohio-words-replace-96 = lula
 
-accent-ohio-words-97 = supermatter
-accent-ohio-words-replace-97 = fanum crystal
+accent-ohio-words-97 = imposto
+accent-ohio-words-replace-97 = taxxad
 
-accent-ohio-words-98 = erping
-accent-ohio-words-replace-98 = going to freaky town
+accent-ohio-words-98 = cela
+accent-ohio-words-replace-98 = cana
 
-accent-ohio-words-99 = erp
-accent-ohio-words-replace-99 = freaky
+accent-ohio-words-99 = preso
+accent-ohio-words-replace-99 = em cana
 
 accent-ohio-words-100 = sm
 accent-ohio-words-replace-100 = cristal magico
