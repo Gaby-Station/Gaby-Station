@@ -2,7 +2,7 @@ accent-cowboy-words-1 = Álcool
 accent-cowboy-replacement-1 = Água de fogo
 
 accent-cowboy-words-2 = Alien 
-accent-cowboy-replacement-2 = criatura espacial  
+accent-cowboy-replacement-2 = criatura espacial 
 
 accent-cowboy-words-3 = Aliens  
 accent-cowboy-replacement-3 = criaturas espaciais  
