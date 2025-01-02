@@ -263,22 +263,22 @@ accent-ohio-words-78 = pup
 accent-ohio-words-replace-78 = hecking chonker
 
 accent-ohio-words-79 = tesla
-accent-ohio-words-replace-79 = bola de energia
+accent-ohio-words-replace-79 = elon musk
 
 accent-ohio-words-80 = singularidade
-accent-ohio-words-replace-80 = buraco negro plano
+accent-ohio-words-replace-80 = thais carla
 
 accent-ohio-words-81 = singu
-accent-ohio-words-replace-81 = buraco negro plano
+accent-ohio-words-replace-81 = thais carla
 
 accent-ohio-words-82 = singulo
-accent-ohio-words-replace-82 = buraco negro plano
+accent-ohio-words-replace-82 = thais carla
 
 accent-ohio-words-83 = singu loose
-accent-ohio-words-replace-83 = buracão negro
+accent-ohio-words-replace-83 = carloose
 
 accent-ohio-words-84 = tesla loose
-accent-ohio-words-replace-84 = bolona de energia
+accent-ohio-words-replace-84 = xandão soltou a tesla
 
 accent-ohio-words-85 = hacking
 accent-ohio-words-replace-85 = hacking like in a video game
@@ -329,7 +329,7 @@ accent-ohio-words-100 = sm
 accent-ohio-words-replace-100 = cristal magico
 
 accent-ohio-words-101 = oficial
-accent-ohio-words-replace-101 = trabalhador
+accent-ohio-words-replace-101 = xandão
 
 accent-ohio-words-102 = cling
 accent-ohio-words-replace-102 = shapeshifting ohioan
