@@ -5,7 +5,7 @@ accent-cowboy-words-2 = Alien
 accent-cowboy-replacement-2 = criatura espacial 
 
 accent-cowboy-words-3 = Aliens
-accent-cowboy-replacement-3 = criaturas espaciais  
+accent-cowboy-replacement-3 = criaturas espaciais
 
 accent-cowboy-words-4 = emboscada  
 accent-cowboy-replacement-4 = golpe de arbusto  
