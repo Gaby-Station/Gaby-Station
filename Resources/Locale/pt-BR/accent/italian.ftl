@@ -103,7 +103,7 @@ accent-italian-words-31 = spaghetti
 accent-italian-words-replace-31 = SPAGHETT
 
 accent-italian-words-32 = picante
-accent-italian-words-replace-32 = a-picante
+accent-italian-words-replace-32 = p-picante
 
 accent-italian-words-33 = obrigado
 accent-italian-words-replace-33 = grazie
