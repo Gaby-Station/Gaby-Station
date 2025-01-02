@@ -1,4 +1,4 @@
-accent-cowboy-words-1 = Álcool.
+accent-cowboy-words-1 = Álcool
 accent-cowboy-replacement-1 = Água de fogo
 
 accent-cowboy-words-2 = Alien 
