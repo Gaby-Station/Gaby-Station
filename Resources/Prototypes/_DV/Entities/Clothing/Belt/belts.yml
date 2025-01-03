@@ -11,9 +11,9 @@
   - type: Storage
     whitelist:
       tags:
-        - Folder
-        - Document
-        - Flashlight
-        - Radio
+      - Folder
+      - Document
+      - Flashlight
+      - Radio
       components:
-        - FitsInDispenser
+      - FitsInDispenser
