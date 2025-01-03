@@ -52,17 +52,8 @@ public sealed partial class CCVars : CVars
         CVarDef.Create("light_cycle.update_per_tick", 3, desc: "(integer)", flag: CVar.SERVERONLY);
 
     #endregion
-
-    /// <summary>
-    /// Set to true to enable the dynamic hostname system.
-    /// Automatically updates the hostname to include current map and preset.
-    /// Configure what that looks like for you in Resources/Prototypes/Locale/en-US/dynamichostname/hostname.ftl
-    /// </summary>
-    public static readonly CVarDef<bool> UseDynamicHostname =
-        CVarDef.Create("game.use_dynamic_hostname", false, CVar.SERVERONLY);
-
-     public static readonly CVarDef<bool> MOTDBuletinEnable =
-        CVarDef.Create("chat.motd_buletin_enable", true, CVar.SERVER | CVar.REPLICATED | CVar.ARCHIVE, "If the MOTD buletin appears in lobby");
+    public static readonly CVarDef<bool> MOTDBuletinEnable =
+       CVarDef.Create("chat.motd_buletin_enable", true, CVar.SERVER | CVar.REPLICATED | CVar.ARCHIVE, "If the MOTD buletin appears in lobby");
 
     #region SoftCrit
 
