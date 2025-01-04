@@ -26,6 +26,8 @@
         amount: 2
       - id: RemoteSignaller
         amount: 2
+      - id: BoxTapeRecorder # Gabystation
+        prob: 0.5
 
 - type: entity
   id: LockerWardenFilled
@@ -52,6 +54,8 @@
         amount: 2
       - id: RemoteSignaller
         amount: 2
+      - id: BoxTapeRecorder # Gabystation
+        prob: 0.5
 
 - type: entity
   id: LockerSecurityFilled
@@ -142,6 +146,8 @@
       - id: BoxEvidenceMarkers
       - id: HandLabeler
       - id: BoxTapeRecorder # DeltaV
+      - id: CassetteTapeInterview # Gabystation - lore
+        prob: 0.25
 
 - type: entity
   id: ClosetBombFilled
