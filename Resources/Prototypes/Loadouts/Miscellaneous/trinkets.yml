@@ -169,6 +169,12 @@
     back:
     - CardBoxBlack
 
+# Gabystation
+- type: loadout
+  id: PlushieBruce
+  storage:
+    back:
+    - PlushieBruce
 
 # Towels
 - type: loadout
