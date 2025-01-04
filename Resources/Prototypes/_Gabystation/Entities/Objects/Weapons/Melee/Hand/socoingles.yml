@@ -5,9 +5,9 @@
   description: Nada melhor do que resolver a confusão do bar com mais violência!
   components:
     - type: Sprite
-      sprite: _Gabystation/Clothing/Hands/Gloves/socoingles.rsi
+      sprite: _Gabystation/Clothing/Hands/Gloves/knuckle.rsi
     - type: Clothing
-      sprite: _Gabystation/Clothing/Hands/Gloves/socoingles.rsi
+      sprite: _Gabystation/Clothing/Hands/Gloves/knuckle.rsi
     - type: StaminaDamageOnHit
       damage: 10
     - type: MeleeWeapon
