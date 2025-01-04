@@ -1,6 +1,6 @@
 - type: entity
   parent: ClothingHandsBase
-  id: Socoingles
+  id: SocoIngles
   name: soco inglês
   description: Nada melhor do que resolver a confusão do bar com mais violência!
   components:
