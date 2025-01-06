@@ -11,9 +11,9 @@
   id: AdminAssistantShoes
   name: loadout-group-admin-assistant-shoes
   loadouts:
-  - BrownLeatherShoes
-  - WhiteLeatherShoes
-  - LaceupShoes
+  - NanotrasenRepresentativeBoots
+  - NanotrasenRepresentativeShoes
+  - NanotrasenRepresentativeHeels
 
 - type: loadoutGroup
   id: AdminAssistantOuter
