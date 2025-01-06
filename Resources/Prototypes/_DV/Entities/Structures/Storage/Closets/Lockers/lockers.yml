@@ -1,4 +1,15 @@
 - type: entity
+  parent: LockerBase
+  id: LockerBaseDeltaV
+  components:
+  - type: Sprite
+    sprite: _DV/Structures/Storage/closet.rsi
+
+- type: entity
+  parent: [ LockerBaseDeltaV, LockerBaseSecure ]
+  id: LockerBaseSecureDeltaV
+
+- type: entity
   parent: LockerBaseSecureDeltaV
   id: LockerAdministrativeAssistant
   name: administrative assistant's locker
@@ -9,3 +20,12 @@
     stateDoorClosed: admin_assist_door
   - type: AccessReader
     access: [["Command"]]
+
+- type: entity # Gabystation - unique AS locker
+  id: UniqueLockerAdministrativeAssistant
+  suffix: MAP THIS, Unique, Filled
+  parent: LockerAdministrativeAssistantFilled
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - UniqueMarkerAdminAssistant
