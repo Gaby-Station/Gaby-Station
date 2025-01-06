@@ -27,7 +27,7 @@
     belt: ClothingBeltPaperworkFilled
     id: AdminAssistantPDA
     pocket1: RubberStampAdminAssistant
-    pocket2: UniqueLockerAdminAssistantFilled
+    pocket2: UniqueAdminAssistantLockerTeleporter
   storage:
     back:
     - Flash

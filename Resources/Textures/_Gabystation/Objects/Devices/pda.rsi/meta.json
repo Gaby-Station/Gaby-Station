@@ -9,6 +9,12 @@
     "states": [
         {
             "name": "pda-admin-assistant"
+        },
+        {
+            "name": "id_overlay"
+        },
+        {
+            "name": "light_overlay"
         }
     ]
 }
