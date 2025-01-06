@@ -22,7 +22,7 @@
     access: [["Command"]]
 
 - type: entity # Gabystation - unique AS locker
-  id: UniqueLockerAdministrativeAssistant
+  id: UniqueLockerAdminAssistantFilled
   suffix: MAP THIS, Unique, Filled
   parent: LockerAdministrativeAssistantFilled
   components:
