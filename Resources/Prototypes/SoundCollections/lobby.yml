@@ -30,3 +30,21 @@
     - /Audio/Lobby/monument.ogg
     - /Audio/Lobby/marhaba.ogg
     - /Audio/Lobby/the_future_soon.ogg
+    # Gabystation - musicas do lobby
+    # Musicas pega da estação pirata
+    # https://github.com/rbertoche/space-station-14/blob/pirata/Resources/Prototypes/SoundCollections/lobby.yml
+    - /Audio/_Gabystation/Lobby/poeira.ogg
+    - /Audio/_Gabystation/Lobby/astronauta.ogg
+    - /Audio/_Gabystation/Lobby/marciano.ogg
+    - /Audio/_Gabystation/Lobby/marmore.ogg
+    - /Audio/_Gabystation/Lobby/oddity.ogg
+    - /Audio/_Gabystation/Lobby/sos.ogg
+    - /Audio/_Gabystation/Lobby/miranda.ogg
+    - /Audio/_Gabystation/Lobby/replicantes.ogg
+    - /Audio/_Gabystation/Lobby/interestelar.ogg
+    - /Audio/_Gabystation/Lobby/devil.ogg
+    # Fim estação pirata
+    - /Audio/_Gabystation/Lobby/estrelar.ogg
+    - /Audio/_Gabystation/Lobby/hurry.ogg
+    - /Audio/_Gabystation/Lobby/radioPirata.ogg
+    - /Audio/_Gabystation/Lobby/tntin.ogg
