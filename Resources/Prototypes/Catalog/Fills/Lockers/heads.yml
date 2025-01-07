@@ -138,6 +138,8 @@
     - id: WeaponDisabler
     - id: ClothingEyesHudCommand
     - id: PrinterDocFlatpack # Gabystation [port corvax]
+    - id: BoxTapeRecorder # Gabystation
+      prob: 0.5
 
 - type: entity
   id: LockerHeadOfPersonnelFilled
@@ -351,6 +353,9 @@
     - id: SecurityTechFabCircuitboard
     - id: WeaponDisabler
     - id: WantedListCartridge
+    - id: BoxTapeRecorder # Gabystation
+      prob: 0.5
+
 # Hardsuit table, used for suit storage as well
 - type: entityTable
   id: FillHeadOfSecurityHardsuit

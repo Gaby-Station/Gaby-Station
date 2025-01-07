@@ -16,7 +16,7 @@
 
   ## Faça Como Uma Arvore e Creça
   <Box>
-    <GuideEntityEmbed Entity="FloraTree06" Caption=""/>
+    <GuideEntityEmbed Entity="FloraTree" Caption=""/>
   </Box>
   Ficar esposto a muito Robust Harvest causará um Diona a crescer fora de controle, o transformando em uma árvore imóvel (deixando todos os seus itens no chão).
   Cortar a árvore vai "restaurar" o Diona para sua forma móvel.

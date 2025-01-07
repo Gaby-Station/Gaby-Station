@@ -7,11 +7,8 @@
   description: survival-description
   rules:
     # - MeteorSwarmScheduler Goobstation - nuh uh
-    - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
-    - SpaceTrafficControlFriendlyEventScheduler
     - BasicRoundstartVariation
-    - ChristmasEventScheduler # goob
 
 - type: gamePreset
   id: KesslerSyndrome
@@ -27,7 +24,6 @@
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
-    - ChristmasEventScheduler # goob
 
 - type: gamePreset
   id: AllAtOnce
@@ -46,7 +42,6 @@
     - Changeling # Goobstation - changeling playtest
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
-    - ChristmasEventScheduler # goob
 
 - type: gamePreset
   id: AllerAtOnce
@@ -72,7 +67,6 @@
     - SpaceTrafficControlFriendlyEventScheduler
     - BasicRoundstartVariation
     - Changeling # Goobstation - changeling playtest
-    - ChristmasEventScheduler # goob
 
 - type: gamePreset
   id: Extended
@@ -87,7 +81,6 @@
   # - MeteorSwarmScheduler Goobstation - nuh uh
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
-  - ChristmasEventScheduler # goob
 
 - type: gamePreset
   id: Greenshift
@@ -100,7 +93,6 @@
   rules:
   - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
-  - ChristmasEventScheduler # goob
 
 - type: gamePreset
   id: Secret
@@ -113,7 +105,6 @@
   rules:
     - Secret
     - BasicStationEventScheduler
-    - ChristmasEventScheduler # goob
 
 - type: gamePreset
   id: SecretExtended #For Admin Use: Runs Extended but shows "Secret" in lobby.
@@ -127,7 +118,6 @@
   #  - MeteorSwarmScheduler Goobstation - nuh uh
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
-    - ChristmasEventScheduler # goob
 
 - type: gamePreset
   id: SecretGreenshift #For Admin Use: Runs Greenshift but shows "Secret" in lobby.
@@ -139,7 +129,6 @@
   rules:
   - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
-  - ChristmasEventScheduler # goob
 
 - type: gamePreset
   id: Sandbox
@@ -151,7 +140,6 @@
   maxPlayers: 5
   rules:
     - Sandbox
-    - ChristmasEventScheduler # goob
 
 - type: gamePreset
   id: Traitor
@@ -168,7 +156,6 @@
   #  - MeteorSwarmScheduler Goobstation - nuh uh
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
-    - ChristmasEventScheduler # goob
 
 - type: gamePreset
   id: Deathmatch
@@ -182,7 +169,6 @@
   supportedMaps: DeathMatchMapPool
   rules:
     - DeathMatch31
-    - ChristmasEventScheduler # goob
 
 - type: gamePreset
   id: Nukeops
@@ -198,7 +184,6 @@
   #  - MeteorSwarmScheduler Goobstation - nuh uh
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
-    - ChristmasEventScheduler # goob
 
 - type: gamePreset
   id: Revolutionary
@@ -216,7 +201,6 @@
   #  - MeteorSwarmScheduler Goobstation - nuh uh
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
-    - ChristmasEventScheduler # goob
 
 - type: gamePreset
   id: Zombie
@@ -235,7 +219,6 @@
 #  - MeteorSwarmScheduler Goobstation - nuh uh
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
-  - ChristmasEventScheduler # goob
 
 - type: gamePreset
   id: Zombieteors
@@ -252,4 +235,3 @@
   - KesslerSyndromeScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
-  - ChristmasEventScheduler # goob

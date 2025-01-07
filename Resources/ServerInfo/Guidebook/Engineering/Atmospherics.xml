@@ -42,6 +42,32 @@
     <GuideEntityEmbed Entity="TritiumCanister"/>
   </Box>
 
+  ##Pluoxium
+  Pluoxium is a non-reactive Oxygen substitute that delivers eight times as much O2 to the bloodstream, with as little 3 kPa minimum pressure required for internals.
+
+  Pluoxium may be created by exposing O2, CO2 and Tritium together in an exothermic reaction between 50 K and 273 K. Furthermore, Pluoxium is also created by the Supermatter, when Oxygen and CO2 are present.
+
+  <Box>
+    <GuideEntityEmbed Entity="OxygenCanister"/>
+    <GuideEntityEmbed Entity="CarbonDioxideCanister"/>
+    <GuideEntityEmbed Entity="TritiumCanister"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="PluoxiumCanister"/>
+  </Box>
+
+  ##Pluoxium
+  Pluoxium is a non-reactive Oxygen substitute that delivers eight times as much O2 to the bloodstream, with as little 3 kPa minimum pressure required for internals.
+
+  Pluoxium may be created by exposing O2, CO2 and Tritium together in an exothermic reaction between 50 K and 273 K. Furthermore, Pluoxium is also created by the Supermatter, when Oxygen and CO2 are present.
+
+  <Box>
+    <GuideEntityEmbed Entity="OxygenCanister"/>
+    <GuideEntityEmbed Entity="CarbonDioxideCanister"/>
+    <GuideEntityEmbed Entity="TritiumCanister"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="PluoxiumCanister"/>
+  </Box>
+
   ## BZ
   O gás BZ é um potente alucinógeno, além de um agente sedativo para slimes. Ele é tóxico para respirar e causa irritação respiratória e tosse. O BZ é usado com frequência como ingrediente em reações químicas mais complexas.
 
@@ -59,7 +85,7 @@
     <GuideEntityEmbed Entity="TritiumCanister"/>
     <GuideEntityEmbed Entity="AirCanister"/>
     <GuideEntityEmbed Entity="GasVentScrubber"/>
-    <GuideEntityEmbed Entity="StorageCanister" Caption="cilindro de frezon"/>
+    <GuideEntityEmbed "FrezonCanister" Caption="cilindro de frezon"/>
   </Box>
 
   É crucial entender que um vazamento de frezon pode devastar a estação, causando um inferno congelante cheio de suéteres irritantes e queimaduras frias. O Frezon é muito frio e pode congelar a estação até a morte se até mesmo alguns moles se escaparem, então certifique-se de trancar seus cilindros ou simplesmente movê-los diretamente para uma sala de armazenamento.
@@ -69,9 +95,9 @@
 
   <Box>
     <GuideEntityEmbed Entity="BZCanister"/>
-    <GuideEntityEmbed Entity="StorageCanister" Caption="cilindro de frezon"/>
+    <GuideEntityEmbed Entity="FrezonCanister" Caption="cilindro de frezon"/>
     <GuideEntityEmbed Entity="GasVentScrubber"/>
-    <GuideEntityEmbed Entity="StorageCanister" Caption="cilindro de healium"/>
+    <GuideEntityEmbed Entity="HealiumCanister" Caption="cilindro de healium"/>
   </Box>
 
   ## Nitrium
@@ -82,7 +108,7 @@
     <GuideEntityEmbed Entity="TritiumCanister"/>
     <GuideEntityEmbed Entity="NitrogenCanister"/>
     <GuideEntityEmbed Entity="GasVentScrubber"/>
-    <GuideEntityEmbed Entity="StorageCanister" Caption="cilindro de nitrium"/>
+    <GuideEntityEmbed Entity="NitriumCanister" Caption="cilindro de nitrium"/>
   </Box>
 
   O Nitrium se decompõe em nitrogênio e vapor d'água ao entrar em contato com o oxigênio à temperatura ambiente. Essa reação pode gerar uma boa quantidade de calor, tornando a estação desconfortavelmente quente em caso de vazamento.

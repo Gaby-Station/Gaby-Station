@@ -19,7 +19,10 @@
           availableJobs:
             #service
             Captain: [ 1, 1 ]
+            NanotrasenRepresentative: [ 1, 1 ]
+            BlueshieldOfficer: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
+            AdministrativeAssistant: [ 1, 1 ] # Gabystation - admin assist
             Bartender: [ 1, 1 ]
             Botanist: [ 2, 2 ]
             Chef: [ 1, 1 ]
@@ -63,3 +66,9 @@
             #silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
+        # Goobstation blob-config-start SMALL+
+        - type: StationBlobConfig
+          stageBegin: 25
+          stageCritical: 350
+          stageTheEnd: 700
+        # Goobstation blob-config-end

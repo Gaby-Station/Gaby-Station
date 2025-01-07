@@ -108,33 +108,34 @@ public abstract partial class SharedMoverController : VirtualController
         UsedMobMovement.Clear();
     }
 
-    /// <summary>
-    ///     Movement while considering actionblockers, weightlessness, etc.
-    /// </summary>
-    protected void HandleMobMovement(
-        EntityUid uid,
-        InputMoverComponent mover,
-        EntityUid physicsUid,
-        PhysicsComponent physicsComponent,
-        TransformComponent xform,
-        float frameTime)
-    {
-        var canMove = mover.CanMove;
-        if (RelayTargetQuery.TryGetComponent(uid, out var relayTarget))
+        /// <summary>
+        ///     Movement while considering actionblockers, weightlessness, etc.
+        /// </summary>
+        protected void HandleMobMovement(
+            EntityUid uid,
+            InputMoverComponent mover,
+            EntityUid physicsUid,
+            PhysicsComponent physicsComponent,
+            TransformComponent xform,
+            float frameTime)
         {
-            if (_mobState.IsIncapacitated(relayTarget.Source) ||
-                TryComp<SleepingComponent>(relayTarget.Source, out _) ||
-                !MoverQuery.TryGetComponent(relayTarget.Source, out var relayedMover))
+            var canMove = mover.CanMove;
+            if (RelayTargetQuery.TryGetComponent(uid, out var relayTarget))
             {
-                canMove = false;
+                if (_mobState.IsDead(relayTarget.Source)
+                    || TryComp<SleepingComponent>(relayTarget.Source, out _)
+                    || !MoverQuery.TryGetComponent(relayTarget.Source, out var relayedMover)
+                    || _mobState.IsCritical(relayTarget.Source) && !_configManager.GetCVar(CCVars.AllowMovementWhileCrit))
+                {
+                    canMove = false;
+                }
+                else
+                {
+                    mover.RelativeEntity = relayedMover.RelativeEntity;
+                    mover.RelativeRotation = relayedMover.RelativeRotation;
+                    mover.TargetRelativeRotation = relayedMover.TargetRelativeRotation;
+                }
             }
-            else
-            {
-                mover.RelativeEntity = relayedMover.RelativeEntity;
-                mover.RelativeRotation = relayedMover.RelativeRotation;
-                mover.TargetRelativeRotation = relayedMover.TargetRelativeRotation;
-            }
-        }
 
         // Update relative movement
         if (mover.LerpTarget < Timing.CurTime)

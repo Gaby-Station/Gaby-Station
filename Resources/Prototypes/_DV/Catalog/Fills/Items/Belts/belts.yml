@@ -1,0 +1,11 @@
+- type: entity
+  parent: ClothingBeltPaperwork
+  id: ClothingBeltPaperworkFilled
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxFolderBase
+    - id: BoxFolderBlack
+    - id: BoxFolderClipboard
+    - id: DrinkVacuumFlask
