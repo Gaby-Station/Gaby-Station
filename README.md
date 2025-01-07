@@ -5,7 +5,7 @@ Essa é uma fork brasileira do [Goob Station](https://github.com/Goob-Station/Go
 > Goob Station é uma fork de [Space Station 14](https://github.com/space-wizards/space-station-14).
 
 > [!TIP]
-> Se você deseja cria conteudo ou hostear um servidor de SS14 (base), vá para o [repositório oficial do Space Station 14](https://github.com/space-wizards/space-station-14).
+> Se você deseja criar conteudo ou hostear um servidor de SS14 (base), vá para o [repositório oficial do Space Station 14](https://github.com/space-wizards/space-station-14).
 
 ## Links:
 
