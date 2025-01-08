@@ -155,7 +155,8 @@ ui-options-function-smart-equip-backpack = Smart-equip to backpack
 ui-options-function-smart-equip-belt = Smart-equip to belt
 ui-options-function-open-backpack = Abrir mochila
 ui-options-function-open-belt = Abrir o cinto
-ui-options-function-throw-item-in-hand = Jogarcomp-storage-no-item-size = N/A
+ui-options-function-throw-item-in-hand = Jogar
+comp-storage-no-item-size = N/A
 comp-storage-cant-insert = Não é possível colocar aí.
 comp-storage-too-big = Muito grande!
 comp-storage-insufficient-capacity = Não há espaço!
