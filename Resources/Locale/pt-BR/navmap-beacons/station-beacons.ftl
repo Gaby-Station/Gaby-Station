@@ -71,3 +71,4 @@ station-beacon-theater = Teatro
 station-beacon-tools = Ferramentas
 station-beacon-disposals = Lixo
 station-beacon-cryosleep = Cryosleep
+station-beacon-escape-pod = Pod de Escape

@@ -156,19 +156,7 @@ ui-options-function-smart-equip-belt = Smart-equip to belt
 ui-options-function-open-backpack = Abrir mochila
 ui-options-function-open-belt = Abrir o cinto
 ui-options-function-throw-item-in-hand = Jogar
-comp-storage-no-item-size = N/A
-comp-storage-cant-insert = Não é possível colocar aí.
-comp-storage-too-big = Muito grande!
-comp-storage-insufficient-capacity = Não há espaço!
-comp-storage-invalid-container = Isso não vai aí!
-comp-storage-anchored-failure = Não é possível inserir um item ancorado.
-comp-storage-cant-drop = Você não pode largar { $entity }!
-comp-storage-window-title = Item de armazenamento
-comp-storage-window-weight = { $weight }/{ $maxWeight }, Tamanho máximo: { $size }
-comp-storage-window-slots = Slots: { $itemCount }/{ $maxCount }, Tamanho máximo: { $size }
-comp-storage-verb-open-storage = Abrir Armazenamento
-comp-storage-verb-close-storage = Fechar Armazenamento
- o cinto
+
 ui-options-function-try-pull-object = Puxar o objeto
 ui-options-function-move-pulled-object = Mover objeto puxado
 ui-options-function-release-pulled-object = Largar objeto puxado
