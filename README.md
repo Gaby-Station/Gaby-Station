@@ -1,4 +1,4 @@
-<p align="center"> <img alt="Space Station 14" src="https://raw.githubusercontent.com/Gaby-Station/Gaby-Station/refs/heads/gaby/Resources/Textures/Logo/logo.png"/></p>
+<p align="center"><img alt="Space Station 14" src="https://raw.githubusercontent.com/Gaby-Station/Gaby-Station/refs/heads/gaby/Resources/Textures/Logo/logo.png"/></p>
 
 Essa é uma fork brasileira do [Goob Station](https://github.com/Goob-Station/Goob-Station), chamada Gaby Station, aqui contem todos os arquivos referentes ao servidor e client do jogo.
 > [!NOTE]
