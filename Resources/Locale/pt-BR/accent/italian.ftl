@@ -75,9 +75,6 @@ accent-italian-words-replace-22 = greek
 accent-italian-words-23 = operativo
 accent-italian-words-replace-23 = greek
 
-accent-italian-words-24 = operativos
-accent-italian-words-replace-24 = greeks
-
 accent-italian-words-24 = ops
 accent-italian-words-replace-24 = greeks
 
@@ -152,3 +149,6 @@ accent-italian-words-replace-47 = am-a
 
 accent-italian-words-48 = and-a
 accent-italian-words-replace-48 = and-a
+
+accent-italian-words-49 = operativos
+accent-italian-words-replace-49 = greeks
