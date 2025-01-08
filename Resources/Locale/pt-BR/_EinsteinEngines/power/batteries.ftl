@@ -1,2 +1,1 @@
-battery-electrocute-charge = A bateria sobrecarregou!
-battery-electrocute-charge = A bateria tomou um disparo de energia!
+battery-electrocute-charge = A bateria pulsa com energia!
