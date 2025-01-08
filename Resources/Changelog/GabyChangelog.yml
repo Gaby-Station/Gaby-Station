@@ -101,11 +101,9 @@ Entries:
   changes:
     - type: Add
       message: Changelog automatica!
-  id: .nan
   time: '2025-01-08T01:17:03.0000000+00:00'
 - author: AgentePanela
   changes:
     - type: Add
       message: Revert "Reativar o cog"
-  id: .nan
   time: '2025-01-08T01:30:48.0000000+00:00'
