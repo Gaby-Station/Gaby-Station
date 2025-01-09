@@ -20,14 +20,12 @@
     RiotLaserShield: 2
     RiotBulletShield: 2
     RadioHandheldSecurity: 5
+    SurveillanceWirelessCameraBodySecurity: 5
+    CassetteTape: 4
+    TapeRecorder: 1
     BolaEnergy: 5 # Goobstation
-    # security officers need to follow a diet regimen!
-    contrabandInventory:
+  # security officers need to follow a diet regimen!
+  contrabandInventory:
     FoodDonutHomer: 12
     FoodBoxDonut: 2
     #box evidence
-    # Gabystation - start
-    CassetteTape: 4
-    TapeRecorder: 1
-    SurveillanceWirelessCameraBodySecurity: 5
-    # Gabystation - end
