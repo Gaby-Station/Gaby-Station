@@ -1,5 +1,3 @@
-Name: GabyStation
-Order: -2
 Entries:
 - author: Dreykor
   time: '2024-11-6T12:01:00.0000000+00:00'
@@ -7,52 +5,62 @@ Entries:
   changes:
     - type: Add
       message: Adiciona o changelog do Gaby Station!
+  id: 0
 - author: cosmosgc
   time: '2024-11-18T12:01:00.0000000+00:00'
   url: https://github.com/Scomossor/Gaby-Station/pull/4
   changes:
     - type: Add
       message: Adiciona canvas para desenho
+  id: 1
 - author: AgentePanela
   time: '2024-11-18T12:01:00.0000000+00:00'
   changes:
     - type: Add
       message: Tradução ao lobby
+  id: 2
 - author: AgentePanela
   time: '2024-11-18T12:01:00.0000000+00:00'
   changes:
     - type: Add
       message: Console de energia portatil
+  id: 3
 - author: AgentePanela
   time: '2024-11-18T12:01:00.0000000+00:00'
   changes:
     - type: Tweak
       message: Revenant
+  id: 4
 - author: AgentePanela
   time: '2024-11-18T12:01:00.0000000+00:00'
   changes:
     - type: Add
       message: Melhorias no console de comunicações
+  id: 5
 - author: Zeroblacck
   time: '2024-11-18T12:01:00.0000000+00:00'
   changes:
     - type: Add
       message: Mais tradução para o jogo
+  id: 6
 - author: JoseFernando-TZ
   time: '2024-11-18T12:01:00.0000000+00:00'
   changes:
     - type: Add
       message: Mais tradução para o jogo
+  id: 7
 - author: Dreykor
   time: '2024-11-18T20:15:00.0000000+00:00'
   changes:
     - type: Add
       message: Adiciona Cabelo e Barba para a raça Moth!
+  id: 8
 - author: Dreykor
   time: '2024-11-20T10:26:00.0000000+00:00'
   changes:
     - type: Fix
       message: Corrige a falta de cabelo e barba para Moth!
+  id: 9
 - author: Day-OS
   time: '2024-11-21T12:01:00.0000000+00:00'
   url: >-
@@ -60,6 +68,7 @@ Entries:
   changes:
     - type: Add
       message: Cartas! 🃏 (cherry-picked)
+  id: 10
 - author: Day-OS
   time: '2024-11-21T12:01:00.0000000+00:00'
   url: >-
@@ -67,43 +76,52 @@ Entries:
   changes:
     - type: Add
       message: Vestidos e Ternos! (cherry-picked)
+  id: 11
 - author: Day-OS
   time: '2024-11-21T12:01:00.0000000+00:00'
   changes:
     - type: Add
       message: Muitas roupas novas (cherry-picked)
+  id: 12
 - author: AgentePanela
   time: '2024-12-08T12:01:00.0000000+00:00'
   changes:
     - type: Add
       message: Impressora de documentos (cherry-picked)
+  id: 13
 - author: Lenhare
   time: '2024-12-22T21:30:00.0000000+00:00'
   changes:
     - type: Add
       message: Tradução inicial do "Guide Book".
+  id: 14
 - author: Zequin
   time: '2024-12-22T21:30:00.0000000+00:00'
   changes:
     - type: Add
       message: Tradução inicial do "Guide Book".
+  id: 15
 - author: AgentePanela
   time: '2025-01-02T21:30:00.0000000+00:00'
   changes:
     - type: Tweak
       message: Sotaquee Ohio agora é Xique-Xique.
+  id: 16
 - author: AgentePanela
   time: '2025-01-02T21:30:00.0000000+00:00'
   changes:
     - type: Add
       message: Pronome neutro.
+  id: 17
 - author: Piras314
   changes:
     - type: Add
       message: Changelog automatica!
   time: '2025-01-08T01:17:03.0000000+00:00'
+  id: 18
 - author: AgentePanela
   changes:
     - type: Add
       message: Revert "Reativar o cog"
   time: '2025-01-08T01:30:48.0000000+00:00'
+  id: 19
