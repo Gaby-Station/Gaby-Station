@@ -17,6 +17,17 @@
       - type: ActiveRadio
         channels:
         - TideHivemind
+  # gaby alt job titles
+  alternateTitles:
+  - AssistantTitlePassenger
+  - AssistantTitleOffDuty
+  - AssistantTitleFreelancer
+  - AssistantTitleErrand
+  - AssistantTitleTrader
+  - AssistantTitleTourist
+  - AssistantTitleIntern
+  - AssistantTitleTest
+  - AssistantTitleArtist
 
 - type: startingGear
   id: PassengerGear
@@ -26,3 +37,39 @@
   #storage:
     #back:
     #- Stuff
+
+- type: jobAlternateTitle
+  id: AssistantTitlePassenger
+  name: job-name-alt-assistant-passenger
+
+- type: jobAlternateTitle
+  id: AssistantTitleOffDuty
+  name: job-name-alt-assistant-off-duty
+
+- type: jobAlternateTitle
+  id: AssistantTitleFreelancer
+  name: job-name-alt-assistant-freelancer
+
+- type: jobAlternateTitle
+  id: AssistantTitleErrand
+  name: job-name-alt-assistant-errand
+
+- type: jobAlternateTitle
+  id: AssistantTitleTrader
+  name: job-name-alt-assistant-trader
+
+- type: jobAlternateTitle
+  id: AssistantTitleTourist
+  name: job-name-alt-assistant-tourist
+
+- type: jobAlternateTitle
+  id: AssistantTitleIntern
+  name: job-name-alt-assistant-intern
+
+- type: jobAlternateTitle
+  id: AssistantTitleTest
+  name: job-name-alt-assistant-test
+
+- type: jobAlternateTitle
+  id: AssistantTitleArtist
+  name: job-name-alt-assistant-artist

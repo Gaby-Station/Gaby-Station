@@ -16,6 +16,13 @@
     - !type:DepartmentTimeRequirement
       department: Command
       time: 36000 # 10 hours
+    - !type:AgeRequirement
+      requiredAge: 21
+    # Goobstation - Siouxcide, prevent felinids from playing command
+    - !type:SpeciesRequirement
+      inverted: true
+      species:
+      - Felinid
   weight: 20
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
@@ -54,6 +61,11 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  alternateTitles:
+  - HoPTitleFirstMate
+  - HoPTitleHeadService
+  - HoPTitleBoatswain
+  - HoPTitleHead
 
 - type: startingGear
   id: HoPGear
@@ -67,3 +79,20 @@
     back:
     - Flash
     - TelescopicBaton # Goobstation
+    
+  # gaby alt job titles
+- type: jobAlternateTitle
+  id: HoPTitleFirstMate
+  name: job-name-alt-hop-first-mate
+
+- type: jobAlternateTitle
+  id: HoPTitleHeadService
+  name: job-name-alt-hop-head-service
+
+- type: jobAlternateTitle
+  id: HoPTitleBoatswain
+  name: job-name-alt-hop-boatswain
+
+- type: jobAlternateTitle
+  id: HoPTitleHead
+  name: job-name-alt-hop-manager

@@ -195,7 +195,18 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         if (profile != null)
         {
             if (prototype != null)
-                SetPdaAndIdCardData(entity.Value, profile.Name, prototype, station);
+            {
+                if (_configurationManager.GetCVar(CCVars.ICAlternateJobTitlesEnable))
+                {
+                    if (profile.JobAlternateTitles.TryGetValue(prototype.ID, out var altTitleId))
+                        if (_prototypeManager.TryIndex(altTitleId, out var altTitle))
+                            SetPdaAndIdCardData(entity.Value, profile.Name, prototype, station, altTitle);
+                }
+                else
+                {
+                    SetPdaAndIdCardData(entity.Value, profile.Name, prototype, station, null);
+                }
+            }
 
             _humanoidSystem.LoadProfile(entity.Value, profile);
             _metaSystem.SetEntityName(entity.Value, profile.Name);
@@ -228,7 +239,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     /// <param name="characterName">Character name to use for the ID.</param>
     /// <param name="jobPrototype">Job prototype to use for the PDA and ID.</param>
     /// <param name="station">The station this player is being spawned on.</param>
-    public void SetPdaAndIdCardData(EntityUid entity, string characterName, JobPrototype jobPrototype, EntityUid? station)
+    public void SetPdaAndIdCardData(EntityUid entity, string characterName, JobPrototype jobPrototype, EntityUid? station, JobAlternateTitlePrototype? jobAltTitle)
     {
         if (!InventorySystem.TryGetSlotEntity(entity, "id", out var idUid))
             return;
@@ -241,7 +252,15 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             return;
 
         _cardSystem.TryChangeFullName(cardId, characterName, card);
-        _cardSystem.TryChangeJobTitle(cardId, jobPrototype.LocalizedName, card);
+
+        if (jobAltTitle != null)
+        {
+            _cardSystem.TryChangeJobTitle(cardId, jobAltTitle.LocalizedName, card);
+        }
+        else
+        {
+            _cardSystem.TryChangeJobTitle(cardId, jobPrototype.LocalizedName, card);
+        }
 
         if (_prototypeManager.TryIndex(jobPrototype.Icon, out var jobIcon))
             _cardSystem.TryChangeJobIcon(cardId, jobIcon, card);

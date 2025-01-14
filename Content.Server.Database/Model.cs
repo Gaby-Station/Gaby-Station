@@ -418,6 +418,8 @@ namespace Content.Server.Database
         public List<Antag> Antags { get; } = new();
         public List<Trait> Traits { get; } = new();
 
+        public List<DBJobAlternateTitle> AltTitles = new();
+
         public List<ProfileRoleLoadout> Loadouts { get; } = new();
 
         [Column("pref_unavailable")] public DbPreferenceUnavailableMode PreferenceUnavailable { get; set; }
@@ -461,6 +463,17 @@ namespace Content.Server.Database
         public int ProfileId { get; set; }
 
         public string TraitName { get; set; } = null!;
+    }
+
+    public class DBJobAlternateTitle
+    {
+        public int Id { get; set; }
+        public Profile Profile { get; set; } = null!;
+        public int ProfileId { get; set; }
+
+        public string RoleName { get; set; } = string.Empty;
+
+        public string AlternateTitle { get; set; } = string.Empty;
     }
 
     #region Loadouts

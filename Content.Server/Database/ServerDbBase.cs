@@ -216,6 +216,16 @@ namespace Content.Server.Database
                 }
             }
 
+            var altTitles = new Dictionary<ProtoId<JobPrototype>, ProtoId<JobAlternateTitlePrototype>>();
+
+            foreach (var role in profile.AltTitles)
+            {
+                altTitles.Add(
+                    new ProtoId<JobPrototype>(role.RoleName),
+                    new ProtoId<JobAlternateTitlePrototype>(role.AlternateTitle)
+                );
+            }
+
             var loadouts = new Dictionary<string, RoleLoadout>();
 
             foreach (var role in profile.Loadouts)
@@ -260,6 +270,7 @@ namespace Content.Server.Database
                 ),
                 spawnPriority,
                 jobs,
+                altTitles,
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
@@ -315,6 +326,18 @@ namespace Content.Server.Database
                 humanoid.TraitPreferences
                         .Select(t => new Trait { TraitName = t })
             );
+
+            profile.AltTitles.Clear();
+            foreach (var (role, title) in humanoid.JobAlternateTitles)
+            {
+                var newTitle = new DBJobAlternateTitle()
+                {
+                    RoleName = role.Id,
+                    AlternateTitle = title.Id
+                };
+
+                profile.AltTitles.Add(newTitle);
+            }
 
             profile.Loadouts.Clear();
 

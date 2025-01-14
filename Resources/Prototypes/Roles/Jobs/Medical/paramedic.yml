@@ -23,6 +23,9 @@
     components:
     - type: SurgerySpeedModifier
       speedModifier: 1.75
+  alternateTitles:
+  - ParamedicTitleFirstResponder
+  - ParamedicTitleTech
 
 - type: startingGear
   id: ParamedicGear
@@ -33,3 +36,11 @@
   storage:
     back:
     - EmergencyRollerBedSpawnFolded
+
+- type: jobAlternateTitle
+  id: ParamedicTitleFirstResponder
+  name: job-name-alt-paramedic-first-responder
+
+- type: jobAlternateTitle
+  id: ParamedicTitleTech
+  name: job-name-alt-paramedic-tech
