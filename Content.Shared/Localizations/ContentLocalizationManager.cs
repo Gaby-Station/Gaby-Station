@@ -26,9 +26,10 @@ namespace Content.Shared.Localizations
         public void Initialize()
         {
             var culture = new CultureInfo(Culture);
-
             _loc.LoadCulture(culture);
-            _loc.AddFunction(culture, "PRESSURE", FormatPressure);
+
+            _loc.AddFunction(culture, "MAKEPLURAL", FormatMakePlural);
+            _loc.AddFunction(culture, "MANY", FormatMany);
             _loc.AddFunction(culture, "POWERWATTS", FormatPowerWatts);
             _loc.AddFunction(culture, "POWERJOULES", FormatPowerJoules);
             _loc.AddFunction(culture, "UNITS", FormatUnits);
@@ -37,6 +38,7 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(culture, "NATURALFIXED", FormatNaturalFixed);
             _loc.AddFunction(culture, "NATURALPERCENT", FormatNaturalPercent);
             _loc.AddFunction(culture, "PLAYTIME", FormatPlaytime);
+            _loc.AddFunction(culture, "PRESSURE", FormatPressure);
 
 
             /*
@@ -46,9 +48,9 @@ namespace Content.Shared.Localizations
              */
             var cultureEn = new CultureInfo("en-US");
             _loc.LoadCulture(cultureEn);
-            _loc.SetFallbackCluture(cultureEn); //estava escrito cluture, meu .net ta com problema, nao consigo ver se esse era mesma a void ou tinham digitado errado
+            _loc.SetFallbackCluture(cultureEn);
 
-            _loc.AddFunction(cultureEn, "MAKEPLURAL", FormatMakePlural); //isso deve arrumar o fallback
+            _loc.AddFunction(cultureEn, "MAKEPLURAL", FormatMakePlural);
             _loc.AddFunction(cultureEn, "MANY", FormatMany);
             _loc.AddFunction(cultureEn, "POWERWATTS", FormatPowerWatts);
             _loc.AddFunction(cultureEn, "POWERJOULES", FormatPowerJoules);
@@ -98,7 +100,7 @@ namespace Content.Shared.Localizations
         private ILocValue FormatMakePlural(LocArgs args)
         {
             var text = ((LocValueString) args.Args[0]).Value;
-            var split = text.Split(" ", 1);
+            var split = text.Split(" ", 2);
             var firstWord = split[0];
             if (PluralEsRule.IsMatch(firstWord))
             {
