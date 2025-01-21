@@ -1,0 +1,19 @@
+- type: entity
+  id: CrateMinerFlatpackO2
+  parent: CrateEngineeringSecure
+  name: caixa do minerador de O2
+  description: Uma caixa que possui um minerador de O2 em formato de flatpack.
+  components:
+  - type: StorageFill
+    contents:
+    - id: MinerFlatpackO2
+
+- type: entity
+  id: CrateMinerFlatpackN2
+  parent: CrateEngineeringSecure
+  name: caixa do minerador de N2
+  description: Uma caixa que possui um minerador de N2 em formato de flatpack.
+  components:
+  - type: StorageFill
+    contents:
+    - id: MinerFlatpackN2
