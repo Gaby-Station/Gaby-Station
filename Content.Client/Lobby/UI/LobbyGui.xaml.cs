@@ -31,6 +31,7 @@ namespace Content.Client.Lobby.UI
             LeaveButton.AddStyleClass("ButtonColorGaby");
 
             LobbySong.SetMarkup(Loc.GetString("lobby-state-song-no-song-text"));
+            LobbyBackground.SetMarkup(Loc.GetString("lobby-state-background-no-background-text")); // Goobstation
 
             LeaveButton.OnPressed += _ => _consoleHost.ExecuteCommand("disconnect");
             BalanceButton.OnPressed += _ => _consoleHost.ExecuteCommand("balanceui");

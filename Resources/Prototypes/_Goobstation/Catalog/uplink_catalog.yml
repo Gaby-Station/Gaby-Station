@@ -308,6 +308,21 @@
     - Clown
     - Passenger
 
+- type: listing
+  id: UplinkZooimovCircuitBoard
+  name: zooimov circuit board
+  description: A lawset for when you wanna keep all the stations animals safe and protected.
+  productEntity: ZooimovCircuitBoard
+  cost:
+    Telecrystal: 15
+  categories:
+    -  UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Zookeeper
+  saleLimit: 1
+
 
 # chemicals
 
@@ -354,7 +369,7 @@
 
 - type: listing
   id: UplinkSmugglerSatchel
-  name: uplink-smugglers-satchel-name
+  name: smuggler's satchel
   description: uplink-smugglers-satchel-desc
   icon: { sprite: Clothing/Back/Satchels/satchel.rsi, state: icon }
   productEntity: ClothingSatchelSmuggler

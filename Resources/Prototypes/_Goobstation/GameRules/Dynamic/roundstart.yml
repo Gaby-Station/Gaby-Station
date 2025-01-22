@@ -75,7 +75,7 @@
     scalingCost: 6
   - type: ChangelingRule
   - type: GameRule
-    minPlayers: 15
+    minPlayers: 12
   - type: AntagObjectives
     objectives:
     - ChangelingStealDNAObjective
@@ -107,7 +107,7 @@
     scalingCost: 6
   - type: HereticRule
   - type: GameRule
-    minPlayers: 20
+    minPlayers: 12
   - type: AntagObjectives
     objectives:
     - HereticKnowledgeObjective
@@ -140,7 +140,7 @@
     highImpact: true
   - type: RevolutionaryRule
   - type: GameRule
-    minPlayers: 20
+    minPlayers: 12
   - type: AntagSelection
     selectionTime: BeforeJobs
     definitions:
@@ -173,7 +173,7 @@
     cost: 20
     highImpact: true
   - type: GameRule
-    minPlayers: 25
+    minPlayers: 15
   - type: LoadMapRule
     mapPath: /Maps/_Goobstation/Nonstations/nukieplanet.yml
   - type: AntagSelection

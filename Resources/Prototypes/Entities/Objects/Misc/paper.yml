@@ -74,8 +74,8 @@
   - type: PhysicalComposition
     materialComposition:
       Paper: 25 #Goobstation - Recycle update
+      SheetPrinter: 25 # Corvax - Printer
   - type: Material # Corvax - Printer
-    SheetPrinter: 100
 
 - type: entity
   name: paper scrap

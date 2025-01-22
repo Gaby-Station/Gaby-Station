@@ -51,11 +51,11 @@
       true
     useSound:
       path: /Audio/Items/crowbar.ogg
-  - type: SpamEmitSound #gritam em constante agonia
-    sound:
-      params:
-        volume: -8
-      collection: NecromorphScreams
+#  - type: SpamEmitSound #gritam em constante agonia
+#    sound:
+#      params:
+#        volume: -8
+#      collection: NecromorphScreams
   - type: Sprite
     drawdepth: Mobs
     sprite: _Gabystation/Mobs/Necromorphs/Slasher.rsi

@@ -50,16 +50,23 @@
                     <!-- Vertical Padding-->
                     <Control VerticalExpand="True" />
                     <!-- Left Bot Panel -->
+                    <!-- Gabystation start-->
                     <BoxContainer Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Bottom">
                             <Button Name="ShowMOTD" Margin="5 5 5 5" Visible="False" Text="{Loc 'lobby-buletin-motd-title'}"
                                 HorizontalExpand="True" VerticalExpand="True" MinWidth="50" Access="Public" />
                         <lobbyUi:LobbyBuletin Name="MOTDBuletin" Margin="3 3 3 3" Access="Public"/>
-                        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                        <!-- Gabystation end -->
+                        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" SeparationOverride="4"> <!-- Goobstation - Lobby Background Credits -->
                             <info:DevInfoBanner Name="DevInfoBanner" VerticalExpand="false" Margin="3 3 3 3" />
                             <PanelContainer StyleClasses="AngleRect">
                                 <RichTextLabel Name="LobbySong" Access="Public" HorizontalAlignment="Center" />
                             </PanelContainer>
                         </BoxContainer>
+                        <!-- Goobstation start -->
+                        <PanelContainer StyleClasses="AngleRect">
+                            <RichTextLabel Name="LobbyBackground" Access="Public" HorizontalAlignment="Center" />
+                        </PanelContainer>
+                        <!-- Goobstation end -->
                     </BoxContainer>
                 </Control>
                 <!-- Character setup state -->
