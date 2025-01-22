@@ -11,7 +11,7 @@
   parent: BaseFlatpack
   id: MinerFlatpackN2
   name: flatpack miner de N2
-  description: Um flatpack para minerar N2.
+  description: Um minerador bluespace comprimido.
   components:
   - type: Flatpack
     entity: GasMinerNitrogen
