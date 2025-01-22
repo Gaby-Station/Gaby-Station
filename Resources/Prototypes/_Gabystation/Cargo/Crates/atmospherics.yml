@@ -12,7 +12,7 @@
   id: CrateMinerFlatpackN2
   parent: CrateEngineeringSecure
   name: caixa do minerador de N2
-  description: Uma caixa que possui um minerador de N2 em formato de flatpack.
+  description: Uma caixa com minerador bluespace de nitrogenio prontro para uso!
   components:
   - type: StorageFill
     contents:
