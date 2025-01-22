@@ -2,7 +2,7 @@
   parent: BaseFlatpack
   id: MinerFlatpackO2
   name: flatpack miner de O2
-  description: Um flatpack para minerar O2.
+  description: Um minerador bluespace comprimido.
   components:
   - type: Flatpack
     entity: GasMinerOxygenStation
