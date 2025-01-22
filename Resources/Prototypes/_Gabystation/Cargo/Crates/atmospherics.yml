@@ -2,7 +2,7 @@
   id: CrateMinerFlatpackO2
   parent: CrateEngineeringSecure
   name: caixa do minerador de O2
-  description: Uma caixa que possui um minerador de O2 em formato de flatpack.
+  description: Uma caixa com minerador bluespace de oxigenio prontro para uso!
   components:
   - type: StorageFill
     contents:
