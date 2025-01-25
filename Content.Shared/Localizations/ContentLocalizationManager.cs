@@ -8,6 +8,7 @@ namespace Content.Shared.Localizations
     public sealed class ContentLocalizationManager
     {
         [Dependency] private readonly ILocalizationManager _loc = default!;
+        [Dependency] private readonly IEntityManager _entMan = default!;
 
         // If you want to change your codebase's language, do it here.
         private const string Culture = "pt-BR";
@@ -40,6 +41,11 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(culture, "PLAYTIME", FormatPlaytime);
             _loc.AddFunction(culture, "PRESSURE", FormatPressure);
 
+            _loc.AddFunction(culture, "ARTIGO-DEFINIDO", FuncArtigoDefinido);
+            _loc.AddFunction(culture, "ARTIGO-INDEFINIDO", FuncArtigoIndefinido);
+            _loc.AddFunction(culture, "PREPOSICAO-DE", FuncPreposicaoDe);
+            _loc.AddFunction(culture, "PREPOSICAO-EM", FuncPreposicaoEm);
+            _loc.AddFunction(culture, "MAKE-GENERO", FormatMakeGenero);
 
             /*
              * The following language functions are specific to the english localization. When working on your own
@@ -262,6 +268,36 @@ namespace Content.Shared.Localizations
                 time = timeArg;
             }
             return new LocValueString(FormatPlaytime(time));
+        }
+
+        private static ILocValue FuncArtigoDefinido(LocArgs args)
+        {
+            return new LocValueString(Loc.GetString("zzzz-artigo-definido", ("ent", args.Args[0])));
+        }
+
+        private static ILocValue FuncArtigoIndefinido(LocArgs args)
+        {
+            return new LocValueString(Loc.GetString("zzzz-artigo-indefinido", ("ent", args.Args[0])));
+        }
+
+        private static ILocValue FuncPreposicaoDe(LocArgs args)
+        {
+            return new LocValueString(Loc.GetString("zzzz-preposicao-de", ("ent", args.Args[0])));
+        }
+
+        private static ILocValue FuncPreposicaoEm(LocArgs args)
+        {
+            return new LocValueString(Loc.GetString("zzzz-preposicao-em", ("ent", args.Args[0])));
+        }
+
+        private static readonly Regex GeneroRule = new("[aeo](?=s?$)");
+
+        private static ILocValue FormatMakeGenero(LocArgs args)
+        {
+            var terminacao = Loc.GetString("zzzz-genero-terminacao", ("ent", args.Args[1]));
+
+            var text = ((LocValueString) args.Args[0]).Value;
+            return new LocValueString(GeneroRule.Replace(text, terminacao));
         }
     }
 }
