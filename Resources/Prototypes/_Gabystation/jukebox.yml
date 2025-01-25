@@ -51,3 +51,29 @@
   name: Tobu - Candyland
   path:
     path: /Audio/_Gabystation/Jukebox/candyland.ogg
+
+- type: jukebox
+  id: Sin
+  name: ZIZZ Studio - Sin
+  path:
+    path: /Audio/_Gabystation/Jukebox/sin.ogg
+
+- type: jukebox
+  id: Sunset
+  name: ZIZZ Studio - Sunset
+  path:
+    path: /Audio/_Gabystation/Jukebox/sunset.ogg
+
+- type: jukebox
+  id: Saya
+  name: ZIZZ Studio - Song Of Saya II
+  path:
+    path: /Audio/_Gabystation/Jukebox/saya.ogg
+
+- type: jukebox
+  id: ShoesofGlass
+  name: Itou Kanako - Shoes Of Glass
+  path:
+    path: /Audio/_Gabystation/Jukebox/shoes_of_glass.ogg
+    
+    
