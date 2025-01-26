@@ -8,10 +8,10 @@ namespace Content.Shared.Localizations
     public sealed class ContentLocalizationManager
     {
         [Dependency] private readonly ILocalizationManager _loc = default!;
-        [Dependency] private readonly IEntityManager _entMan = default!;
 
         // If you want to change your codebase's language, do it here.
         private const string Culture = "pt-BR";
+        private const string FallbackCulture = "en-US";
 
         /// <summary>
         /// Custom format strings used for parsing and displaying minutes:seconds timespans.
@@ -41,18 +41,20 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(culture, "PLAYTIME", FormatPlaytime);
             _loc.AddFunction(culture, "PRESSURE", FormatPressure);
 
-            _loc.AddFunction(culture, "ARTIGO-DEFINIDO", FuncArtigoDefinido);
-            _loc.AddFunction(culture, "ARTIGO-INDEFINIDO", FuncArtigoIndefinido);
+            _loc.AddFunction(culture, "ARTIGO-O", FuncArtigoDefinido);
+            _loc.AddFunction(culture, "ARTIGO-UM", FuncArtigoIndefinido);
             _loc.AddFunction(culture, "PREPOSICAO-DE", FuncPreposicaoDe);
             _loc.AddFunction(culture, "PREPOSICAO-EM", FuncPreposicaoEm);
-            _loc.AddFunction(culture, "MAKE-GENERO", FormatMakeGenero);
+            _loc.AddFunction(culture, "PRONOME-ELE", FuncPronomeEle);
+            _loc.AddFunction(culture, "PRONOME-DELE", FuncPronomeDele);
+            _loc.AddFunction(culture, "MAKEGENERO", FormatMakeGenero);
 
             /*
              * The following language functions are specific to the english localization. When working on your own
              * localization you should NOT modify these, instead add new functions specific to your language/culture.
              * This ensures the english translations continue to work as expected when fallbacks are needed.
              */
-            var cultureEn = new CultureInfo("en-US");
+            var cultureEn = new CultureInfo(FallbackCulture);
             _loc.LoadCulture(cultureEn);
             _loc.SetFallbackCluture(cultureEn);
 
@@ -134,8 +136,8 @@ namespace Content.Shared.Localizations
             {
                 <= 0 => string.Empty,
                 1 => list[0],
-                2 => $"{list[0]} and {list[1]}",
-                _ => $"{string.Join(", ", list.GetRange(0, list.Count - 1))}, and {list[^1]}"
+                2 => $"{list[0]} e {list[1]}",
+                _ => $"{string.Join(", ", list.GetRange(0, list.Count - 1))}, e {list[^1]}"
             };
         }
 
@@ -148,8 +150,8 @@ namespace Content.Shared.Localizations
             {
                 <= 0 => string.Empty,
                 1 => list[0],
-                2 => $"{list[0]} or {list[1]}",
-                _ => $"{string.Join(" or ", list)}"
+                2 => $"{list[0]} ou {list[1]}",
+                _ => $"{string.Join(" ou ", list)}"
             };
         }
 
@@ -288,6 +290,16 @@ namespace Content.Shared.Localizations
         private static ILocValue FuncPreposicaoEm(LocArgs args)
         {
             return new LocValueString(Loc.GetString("zzzz-preposicao-em", ("ent", args.Args[0])));
+        }
+
+        private static ILocValue FuncPronomeEle(LocArgs args)
+        {
+            return new LocValueString(Loc.GetString("zzzz-pronome-ele", ("ent", args.Args[0])));
+        }
+
+        private static ILocValue FuncPronomeDele(LocArgs args)
+        {
+            return new LocValueString(Loc.GetString("zzzz-pronome-dele", ("ent", args.Args[0])));
         }
 
         private static readonly Regex GeneroRule = new("[aeo](?=s?$)");

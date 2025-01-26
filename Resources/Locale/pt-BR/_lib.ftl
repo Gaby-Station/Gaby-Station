@@ -32,30 +32,45 @@ zzzz-fmt-power-joules = { TOSTRING($divided, "F1") } { $places ->
     *[5] ???
 }
 
-# Usado internamente pela função ARTIGO-DEFINIDO().
-zzzz-artigo-definido = { GENDER($ent) ->
+# Usado internamente pela função ARTIGO-UM().
+zzzz-artigo-indefinido = { GENDER($ent) ->
     *[male] um
     [female] uma
-    [epicene] uns
 }
 
-# Usado internamente pela função ARTIGO-INDEFINIDO().
-zzzz-artigo-indefinido = { GENDER($ent) ->
+# Usado internamente pela função ARTIGO-O().
+zzzz-artigo-definido = { GENDER($ent) ->
     *[male] o
     [female] a
-    [epicene] os
+    # [neuter]
 }
 
 # Usado internamente pela função PREPOSICAO-DE().
 zzzz-preposicao-de = { GENDER($ent) ->
     *[male] do
     [female] da
+    # [neuter] de
 }
 
 # Usado internamente pela função PREPOSICAO-EM().
 zzzz-preposicao-em = { GENDER($ent) ->
     *[male] no
     [female] na
+    # [neuter] em
+}
+
+# Usado internamente pela função PRONOME-ELE().
+zzzz-pronome-ele = { GENDER($ent) ->
+    *[male] ele
+    [female] ela
+    # [neuter] elo
+}
+
+# Usado internamente pela função PRONOME-DELE().
+zzz-pronome-dele = { GENDER($ent) ->
+    *[male] dele
+    [female] dela
+    # [neuter] delo
 }
 
 # Usado internamente pela função MAKEGENDER()
