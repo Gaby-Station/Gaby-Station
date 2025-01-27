@@ -27,6 +27,9 @@
         },
         {
             "name": "singlecard_down"
+        },
+        {
+            "name": "card_drawfour"
         }
     ]
 }
