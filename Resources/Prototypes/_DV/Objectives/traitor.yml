@@ -19,8 +19,7 @@
 - type: entity
   parent: [BaseTraitorObjective, BaseTeachLessonObjective]
   id: TeachLessonRandomPersonObjective
-  #description: Kill them, and show everyone we mean business. They only need to die once.
-  description: Elimine. Mostre a todos como nossos negócios realmente funcionam. Basta matar uma única vez.
+  description: Kill them, and show everyone we mean business. They only need to die once.
   components:
   - type: Objective
     difficulty: 1.75
