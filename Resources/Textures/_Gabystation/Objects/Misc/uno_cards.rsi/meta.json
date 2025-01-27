@@ -1,0 +1,32 @@
+{
+    "version": 1,
+    "copyright": "Cards, Decks and Hands Sprites were originally from Paradise Station (https://github.com/ParadiseSS13/Paradise) and modified by VictorJob. Boxes are from VictorJob.",
+    "license": "CC-BY-SA-3.0",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+        {
+            "name": "box"
+        },
+        {
+            "name": "box_open"
+        },
+        {
+            "name": "deck_full"
+        },
+        {
+            "name": "deck_half"
+        },
+        {
+            "name": "deck_low"
+        },
+        {
+            "name": "deck_empty"
+        },
+        {
+            "name": "singlecard_down"
+        }
+    ]
+}

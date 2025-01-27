@@ -1,0 +1,68 @@
+
+- type: entity
+  parent: CardBase
+  id: CardBaseUno
+  name: UNtO card
+  components:
+    - type: Card
+      backSpriteLayers:
+      - sprite: _Gabystation/Objects/Misc/cards.rsi
+        state: singlecard_down
+
+- type: entity
+  parent: CardBoxBase
+  id: CardBoxUno
+  name: UNtO deck box
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Gabystation/Objects/Misc/cards.rsi
+    layers:
+    - state: box
+    - state: box_open
+      map: [ "openLayer" ]
+      visible: false
+  - type: OpenTriggeredStorageFill
+    contents:
+    - id: CardDeckUno
+      amount: 1
+
+- type: entity
+  parent: CardDeckBase
+  id: CardDeckUno
+  name: deck of UNtO cards
+  components:
+  - type: Sprite
+    sprite: _Gabystation/Objects/Misc/cards.rsi
+    state: deck_full
+  - type: CardStack
+    content:
+    # Special cards
+    - CardUnoFourColors
+
+# region uno Cards
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoFourColors
+  components:
+  - type: Card
+    name: card-sc-joker
+  - type: Sprite
+    sprite: EstacaoPirata/Objects/Misc/cards.rsi
+    state: syndicate_joker
+
+- type: entity
+  parent: CardBaseUno
+  categories: [ HideSpawnMenu ]
+  id: CardUnoDrawFour
+  components:
+  - type: Card
+    name: card-sc-joker
+  - type: Sprite
+    sprite: EstacaoPirata/Objects/Misc/cards.rsi
+    state: syndicate_joker
+
+# endregion uno Cards
