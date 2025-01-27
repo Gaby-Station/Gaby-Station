@@ -10,16 +10,16 @@
   - Core
   - Fland
   #- Gate TODO: goob gate
-  - Loop
+  #- Loop # Gabystation - mapa ruim
   - Marathon
   - Meta
   - Oasis
   - Omega
-  - Origin
+  #- Origin # Goobstation - its broke
   - Saltern
   - Packed
-  - Reach
-  - Train # Goobstation - all my friends hate train
+  #- Reach # Gabystation - mapa ruim
+  #- Train # Gabystation - mapa ruim
   - FlandHighPop
   - OasisHighPop
   - Barratry # Goobstation - Re-add barratry

@@ -110,10 +110,10 @@
     interactSuccessSpawn: EffectHearts
   - type: SupermatterImmune # Goobstation
   - type: MetaData # Goobstation
-  - type: RandomMetadata # Goobstation
-    nameSegments:
-    - goob_generators_names_first
-    - goob_generators_names_tesla_last
+  #- type: RandomMetadata # Goobstation
+  #  nameSegments:
+  #  - goob_generators_names_first
+  #  - goob_generators_names_tesla_last # Gabystation - QoL & Roleplay
 
 - type: entity
   id: TeslaMiniEnergyBall

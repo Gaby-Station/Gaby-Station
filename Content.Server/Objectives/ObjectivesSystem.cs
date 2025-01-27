@@ -183,9 +183,9 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
                         ));
                         completedObjectives++;
 
-                         // Easiest place to give people points for completing objectives lol
-                        if(userid.HasValue)
-                            _currencyMan.AddCurrency(userid.Value, 5);
+                        // Easiest place to give people points for completing objectives lol
+                        if (userid.HasValue)
+                            _currencyMan.AddCurrency(userid.Value, 3); // Gabystation - QoL Roleplay
                     }
                     else
                     {

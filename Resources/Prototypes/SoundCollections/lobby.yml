@@ -2,9 +2,9 @@
   id: LobbyMusic
   files:
     - /Audio/Lobby/thunderdome.ogg
-    - /Audio/Lobby/absconditus.ogg
+  #  - /Audio/Lobby/absconditus.ogg
     - /Audio/Lobby/space_asshole.ogg
-    - /Audio/Lobby/endless_space.ogg
+  #  - /Audio/Lobby/endless_space.ogg
     - /Audio/Lobby/singuloose.ogg
     - /Audio/Lobby/comet_haley.ogg
     - /Audio/Lobby/title2.ogg
@@ -19,14 +19,14 @@
     - /Audio/Lobby/skubstep.ogg
     - /Audio/Lobby/sneedsfeedandseed.ogg
     - /Audio/Lobby/honk.ogg
-    - /Audio/Lobby/clownalwayswins.ogg
+  #  - /Audio/Lobby/clownalwayswins.ogg
     - /Audio/Lobby/clownwmv.ogg
-    - /Audio/Lobby/dawsonschristian.ogg
+  #  - /Audio/Lobby/dawsonschristian.ogg
     - /Audio/Lobby/thewizard.ogg
     - /Audio/Lobby/skubstub.ogg
-    - /Audio/Lobby/space_radiation.ogg
-    - /Audio/Lobby/redsun.ogg
-    - /Audio/Lobby/chollima.ogg
+  #  - /Audio/Lobby/space_radiation.ogg
+  #  - /Audio/Lobby/redsun.ogg
+  #  - /Audio/Lobby/chollima.ogg
     - /Audio/Lobby/monument.ogg
     - /Audio/Lobby/marhaba.ogg
     - /Audio/Lobby/the_future_soon.ogg
@@ -48,3 +48,17 @@
     - /Audio/_Gabystation/Lobby/hurry.ogg
     - /Audio/_Gabystation/Lobby/radioPirata.ogg
     - /Audio/_Gabystation/Lobby/tntin.ogg
+    - /Audio/_Gabystation/Lobby/A_Gira.ogg
+    - /Audio/_Gabystation/Lobby/Brasil_Pandeiro.ogg
+    - /Audio/_Gabystation/Lobby/CHA-LA_HEAD-CHA-LA.ogg
+    - /Audio/_Gabystation/Lobby/Ela_Partiu.ogg
+    - /Audio/_Gabystation/Lobby/Escrito_Nas_Estrelas.ogg
+    - /Audio/_Gabystation/Lobby/Gatinha_Comunista.ogg
+    - /Audio/_Gabystation/Lobby/Lança_Perfume.ogg
+    - /Audio/_Gabystation/Lobby/Marcos_Valle_Estrelar.ogg
+    - /Audio/_Gabystation/Lobby/Melissa.ogg
+    - /Audio/_Gabystation/Lobby/Mun_Rá.ogg
+    - /Audio/_Gabystation/Lobby/Periferia.ogg
+    - /Audio/_Gabystation/Lobby/Sorriso_Resplandecente.ogg
+    - /Audio/_Gabystation/Lobby/Trem_das_Onze.ogg
+    - /Audio/_Gabystation/Lobby/sete_mares.ogg

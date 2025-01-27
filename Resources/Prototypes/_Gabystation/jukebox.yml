@@ -75,5 +75,64 @@
   name: Itou Kanako - Shoes Of Glass
   path:
     path: /Audio/_Gabystation/Jukebox/shoes_of_glass.ogg
-    
-    
+
+
+- type: jukebox
+  id: ChaLaHeadChaLa
+  name: RicardoJuniorSings - Cha-la Head Cha-la
+  path:
+    path: /Audio/_Gabystation/Lobby/CHA-LA_HEAD-CHA-LA.ogg
+
+- type: jukebox
+  id: GatinhaComunista
+  name: Vitroles - Gatinha Comunista
+  path:
+    path: /Audio/_Gabystation/Lobby/Gatinha_Comunista.ogg
+
+- type: jukebox
+  id: Melissa
+  name: Canal Tragicômico - Melissa
+  path:
+    path: /Audio/_Gabystation/Lobby/Melissa.ogg
+
+- type: jukebox
+  id: SorrisoResplandecente
+  name: RicardoJuniorSings - Sorriso Resplandecente
+  path:
+    path: /Audio/_Gabystation/Lobby/Sorriso_Resplandecente.ogg
+
+- type: jukebox
+  id: ElaPartiu
+  name: Tim Maia - Ela Partiu
+  path:
+    path: /Audio/_Gabystation/Lobby/Ela_Partiu.ogg
+
+- type: jukebox
+  id: SeteMares
+  name: Tim Maia - O Descobridor dos Sete Mares
+  path:
+    path: /Audio/_Gabystation/Lobby/sete_mares.ogg
+
+- type: jukebox
+  id: Perfume
+  name: Rita Lee - Lança Perfume
+  path:
+    path: /Audio/_Gabystation/Lobby/Lança_Perfume.ogg
+
+- type: jukebox
+  id: Periferia
+  name: Nega Lí - Periferia
+  path:
+    path: /Audio/_Gabystation/Lobby/Periferia.ogg
+
+- type: jukebox
+  id: MunRa
+  name: Sabotage - Mun Rá
+  path:
+    path: /Audio/_Gabystation/Lobby/Mun_Rá.ogg
+
+- type: jukebox
+  id: TremDasOnze
+  name: Adoniran Barbosa - Trem das Onze
+  path:
+    path: /Audio/_Gabystation/Lobby/Trem_das_Onze.ogg

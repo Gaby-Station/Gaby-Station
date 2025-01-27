@@ -6,6 +6,8 @@ using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Server.GameTicking;
 using Content.Shared.Humanoid;
+using Content.Shared.Roles.Jobs; // Gabystation - QoL Roleplay
+using Robust.Server.Player; // Gabystation - QoL Roleplay
 
 namespace Content.Server._Goobstation.ServerCurrency
 {
@@ -17,6 +19,8 @@ namespace Content.Server._Goobstation.ServerCurrency
         [Dependency] private readonly ServerCurrencyManager _currencyMan = default!;
         [Dependency] private readonly PopupSystem _popupSystem = default!;
         [Dependency] private readonly SharedMindSystem _mind = default!;
+        [Dependency] private readonly SharedJobSystem _jobs = default!; // Gabystation - QoL Roleplay
+        [Dependency] private readonly IPlayerManager _players = default!; // Gabystation - QoL Roleplay
         public override void Initialize()
         {
             base.Initialize();
@@ -39,16 +43,26 @@ namespace Content.Server._Goobstation.ServerCurrency
 
         private void OnRoundEndText(RoundEndTextAppendEvent ev)
         {
+            if (_players.PlayerCount < 7) // Gabystation - QoL & Roleplay
+                return; // Gaby Coin anti-farm system
+
             var query = EntityQueryEnumerator<MindContainerComponent, HumanoidAppearanceComponent>();
 
-            while (query.MoveNext(out _, out var mindContainer, out _))
+            while (query.MoveNext(out _ out var mindContainer, out _))
             {
                 if (mindContainer.Mind.HasValue)
                 {
                     var mind = Comp<MindComponent>(mindContainer.Mind.Value);
                     if (mind is not null && !_mind.IsCharacterDeadIc(mind))
-                        if (mind.OriginalOwnerUserId.HasValue)
-                            _currencyMan.AddCurrency(mind.OriginalOwnerUserId.Value, 10);
+                        if (mind.OriginalOwnerUserId.HasValue) // Gabystation - QoL Roleplay
+                        {
+                            int money = 10;
+                            var session = mind.Session;
+                            if (session is not null && !_jobs.CanBeAntag(session))
+                                money += 10;
+
+                            _currencyMan.AddCurrency(mind.OriginalOwnerUserId.Value, money);
+                        }
                 }
             }
         }
@@ -70,7 +84,8 @@ namespace Content.Server._Goobstation.ServerCurrency
             RaiseNetworkEvent(new PlayerBalanceUpdateEvent(ev.NewBalance, ev.OldBalance), ev.UserSes);
 
 
-            if(ev.UserSes.AttachedEntity.HasValue){
+            if (ev.UserSes.AttachedEntity.HasValue)
+            {
                 var userEnt = ev.UserSes.AttachedEntity.Value;
                 if (ev.NewBalance > ev.OldBalance)
                     _popupSystem.PopupEntity("+" + _currencyMan.Stringify(ev.NewBalance - ev.OldBalance), userEnt, userEnt, PopupType.Medium);

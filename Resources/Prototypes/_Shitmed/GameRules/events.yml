@@ -4,9 +4,10 @@
   components:
   - type: StationEvent
     earliestStart: 15
-    weight: 7.5
+    weight: 7.0 # Gabystation - menos abductor
     minimumPlayers: 10
     duration: 1
+    maxOccurrences: 2 # Gabystation - menos abductors
   - type: RuleGrids
   - type: LoadMapRule
     mapPath: /Maps/_Shitmed/Shuttles/ShuttleEvent/abductor_shuttle.yml
@@ -28,7 +29,7 @@
         sound: /Audio/_Shitmed/Misc/abductor.ogg
       components:
       - type: Abductor
-      - type: Muted
+      - type: GlorpAccent #Gloob - Glorpfix
       - type: AbductorScientist
       - type: SurgeryIgnoreClothing
       - type: SurgerySpeedModifier

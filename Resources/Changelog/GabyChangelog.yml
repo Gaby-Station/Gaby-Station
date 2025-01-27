@@ -145,3 +145,49 @@ Entries:
       message: Alien.
   id: 21
   time: '2025-01-15T17:30:09.0000000+00:00'
+- author: joshepvodka
+  changes:
+    - type: Remove
+      message: Dynamic da votação
+  id: 22
+  time: '2025-01-25T21:30:52.0000000+00:00'
+- author: joshepvodka
+  changes:
+    - type: Add
+      message: Mais musicas foram adicionadas ao lobby e a jukebox.
+  id: 23
+  time: '2025-01-26T00:08:57.0000000+00:00'
+- author: AgentePanela
+  changes:
+    - type: Add
+      message: Heads e secs ganham 10 gaby coins a mais.
+    - type: Remove
+      message: Nomes bobos para singu, tesla e SM.
+    - type: Tweak
+      message: >-
+        Jogadores apenas podem ganhar coins se estiver mais de 7 pessoas no
+        round.
+    - type: Tweak
+      message: Quantidade de eventos.
+    - type: Tweak
+      message: Greentext da menos coins.
+    - type: Tweak
+      message: Preços da loja.
+    - type: Fix
+      message: Quantidade absurdas de antags midround.
+  id: 24
+  time: '2025-01-27T03:17:15.0000000+00:00'
+- author: Lyndomen, Sleepy.Abril, MilonPR and DoutorWhite
+  changes:
+    - type: Tweak
+      message: Alvos de morte normais agora só precisam ser mortos uma vez - mas precisa ensinar a eles uma lição que será lembrada
+  id: 25
+  time: '2025-01-27T14:11:05.0000000+00:00'
+- author: youtissoum and DoutorWhite 
+  changes:
+    - type: Add
+      message: >-
+        Adiciona prisioneiros, uma nova função focada em role-play. (Não são
+        antagonistas)
+  id: 26
+  time: '2025-01-27T14:13:29.0000000+00:00'

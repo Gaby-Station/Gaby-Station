@@ -35,6 +35,7 @@
             StationEngineer: [ 1, 2 ]
             Scientist: [ 1, 1 ]
             Passenger: [ -1, -1 ]
+            PermaPrisoner: [ 1, 1 ] # Gaby
 
         # Goobstation blob-config-start LOW
         - type: StationBlobConfig
