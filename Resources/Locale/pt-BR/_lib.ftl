@@ -42,35 +42,35 @@ zzzz-artigo-indefinido = { GENDER($ent) ->
 zzzz-artigo-definido = { GENDER($ent) ->
     *[male] o
     [female] a
-    # [neuter]
+    [neuter] { "" }
 }
 
 # Usado internamente pela função PREPOSICAO-DE().
 zzzz-preposicao-de = { GENDER($ent) ->
     *[male] do
     [female] da
-    # [neuter] de
+    [neuter] de
 }
 
 # Usado internamente pela função PREPOSICAO-EM().
 zzzz-preposicao-em = { GENDER($ent) ->
     *[male] no
     [female] na
-    # [neuter] em
+    [neuter] em
 }
 
 # Usado internamente pela função PRONOME-ELE().
 zzzz-pronome-ele = { GENDER($ent) ->
     *[male] ele
     [female] ela
-    # [neuter] elo
+    [neuter] elo
 }
 
 # Usado internamente pela função PRONOME-DELE().
 zzz-pronome-dele = { GENDER($ent) ->
     *[male] dele
     [female] dela
-    # [neuter] delo
+    [neuter] delo
 }
 
 # Usado internamente pela função MAKEGENDER()

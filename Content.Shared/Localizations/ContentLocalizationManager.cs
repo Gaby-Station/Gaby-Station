@@ -302,7 +302,7 @@ namespace Content.Shared.Localizations
             return new LocValueString(Loc.GetString("zzzz-pronome-dele", ("ent", args.Args[0])));
         }
 
-        private static readonly Regex GeneroRule = new("[aeo](?=s?$)");
+        private static readonly Regex GeneroRule = new("[ao](?=s?$)");
 
         private static ILocValue FormatMakeGenero(LocArgs args)
         {
@@ -312,4 +312,4 @@ namespace Content.Shared.Localizations
             return new LocValueString(GeneroRule.Replace(text, terminacao));
         }
     }
-}
+}s
