@@ -32,7 +32,7 @@
     <!-- Hands -->
     <ui:RadialContainer Name="Hands"  VerticalExpand="True" HorizontalExpand="True" Radius="64"/>
 
-    <!-- Goobstation - Farts -->
-    <ui:RadialContainer Name="Farts"  VerticalExpand="True" HorizontalExpand="True" Radius="64"/>
+    <!-- Goobstation - Farts
+    <ui:RadialContainer Name="Farts"  VerticalExpand="True" HorizontalExpand="True" Radius="64"/> Gabystation - remove fart -->
 
 </ui:RadialMenu>

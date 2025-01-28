@@ -25,6 +25,7 @@
     - id: SpiderSpawn
     - id: VentClog
     - id: NecromorphSpawn # Gabystation add
+    - id: DiseaseOutbreak # Gabystation add
 
 - type: entityTable
   id: BasicAntagEventsTable

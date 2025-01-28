@@ -48,7 +48,7 @@ namespace Content.Server._Goobstation.ServerCurrency
 
             var query = EntityQueryEnumerator<MindContainerComponent, HumanoidAppearanceComponent>();
 
-            while (query.MoveNext(out _ out var mindContainer, out _))
+            while (query.MoveNext(out _, out var mindContainer, out _))
             {
                 if (mindContainer.Mind.HasValue)
                 {
