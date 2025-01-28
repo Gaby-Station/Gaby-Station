@@ -104,26 +104,29 @@ namespace Content.Shared.Localizations
         }
 
         private static readonly Regex PluralEsRule = new("^.*(s|sh|ch|x|z)$");
+        private static readonly Regex PluralOesRule = new("ão$");
+        private static readonly Regex PluralIsRule = new("[aeo]l$");
+        private static readonly Regex PluralNsRule = new("m$");
 
         private ILocValue FormatMakePlural(LocArgs args)
         {
             var text = ((LocValueString) args.Args[0]).Value;
             var split = text.Split(" ", 2);
             var firstWord = split[0];
-            if (PluralEsRule.IsMatch(firstWord))
-            {
-                if (split.Length == 1)
-                    return new LocValueString($"{firstWord}es");
-                else
-                    return new LocValueString($"{firstWord}es {split[1]}");
-            }
+            string plural;
+
+            if (PluralOesRule.IsMatch(firstWord))
+                plural = firstWord[..^2] + "oẽs";
+            else if (PluralIsRule.IsMatch(firstWord))
+                plural = firstWord[..^1] + "is";
+            else if (PluralNsRule.IsMatch(firstWord))
+                plural = firstWord[..^1] + "ns";
+            else if (PluralEsRule.IsMatch(firstWord))
+                plural = firstWord + "es";
             else
-            {
-                if (split.Length == 1)
-                    return new LocValueString($"{firstWord}s");
-                else
-                    return new LocValueString($"{firstWord}s {split[1]}");
-            }
+                plural = firstWord + "s";
+
+            return split.Length == 1 ? new LocValueString(plural) : new LocValueString($"{plural} {split[1]}");
         }
 
         // TODO: allow fluent to take in lists of strings so this can be a format function like it should be.
