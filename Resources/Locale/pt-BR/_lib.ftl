@@ -67,7 +67,7 @@ zzzz-pronome-ele = { GENDER($ent) ->
 }
 
 # Usado internamente pela função PRONOME-DELE().
-zzz-pronome-dele = { GENDER($ent) ->
+zzzz-pronome-dele = { GENDER($ent) ->
     *[male] dele
     [female] dela
     [neuter] delo

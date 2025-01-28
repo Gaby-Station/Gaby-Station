@@ -312,4 +312,4 @@ namespace Content.Shared.Localizations
             return new LocValueString(GeneroRule.Replace(text, terminacao));
         }
     }
-}s
+}
