@@ -305,14 +305,19 @@ namespace Content.Shared.Localizations
             return new LocValueString(Loc.GetString("zzzz-pronome-dele", ("ent", args.Args[0])));
         }
 
+        private static readonly Regex GeneroAoRule = new("ão$");
         private static readonly Regex GeneroRule = new("[ao](?=s?$)");
 
         private static ILocValue FormatMakeGenero(LocArgs args)
         {
             var terminacao = Loc.GetString("zzzz-genero-terminacao", ("ent", args.Args[1]));
-
             var text = ((LocValueString) args.Args[0]).Value;
-            return new LocValueString(GeneroRule.Replace(text, terminacao));
+
+            if (GeneroAoRule.IsMatch(text))
+                // "anão" vira "anã"
+                return new LocValueString(text[..^1]);
+            else
+                return new LocValueString(GeneroRule.Replace(text, terminacao));
         }
     }
 }
