@@ -307,6 +307,7 @@ namespace Content.Shared.Localizations
 
         private static readonly Regex GeneroAoRule = new("ão$");
         private static readonly Regex GeneroRule = new("[ao](?=s?$)");
+        private static readonly Regex GeneroNeutroCeRule = new("c[ao](?=s?$)");
 
         private static ILocValue FormatMakeGenero(LocArgs args)
         {
@@ -314,10 +315,16 @@ namespace Content.Shared.Localizations
             var text = ((LocValueString) args.Args[0]).Value;
 
             if (GeneroAoRule.IsMatch(text))
-                // "anão" vira "anã"
-                return new LocValueString(text[..^1]);
+            {
+                return terminacao == "a" ? new LocValueString(text[..^1]) : new LocValueString(text[..^1] + terminacao);
+            }
             else
-                return new LocValueString(GeneroRule.Replace(text, terminacao));
+            {
+                if (terminacao == "e" && GeneroNeutroCeRule.IsMatch(text))
+                    return new LocValueString(text[..^2] + "que");
+                else
+                    return new LocValueString(GeneroRule.Replace(text, terminacao));
+            }
         }
     }
 }
