@@ -122,13 +122,16 @@ public sealed partial class BanManager
     private string FormatTime(uint? time)
     {
         if (time is null)
-            return "???";
+            return Loc.GetString("ban-manager-notify-discord-permanent");
 
         var minutes = time ?? 0;
 
-        uint days = minutes / 1440;
-
-        return Loc.GetString("ban-manager-notify-discord-formart",
-        ("days", days));
+        if (minutes < 60)
+            return Loc.GetString("ban-manager-notify-discord-format-minutes", ("minutes", minutes));
+        
+        if (minutes < 1440)
+            return Loc.GetString("ban-manager-notify-discord-format-hours", ("hours", minutes / 60));
+        
+        return Loc.GetString("ban-manager-notify-discord-format-days", ("days", minutes / 1440));
     }
 }
