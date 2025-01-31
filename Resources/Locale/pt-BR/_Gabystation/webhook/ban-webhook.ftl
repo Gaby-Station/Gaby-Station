@@ -8,7 +8,17 @@ ban-manager-notify-discord-role-perma = {$admin} baniu **{$player}** de {$role} 
 
 ban-manager-notify-discord-footer = -# Round {$round} - Id: {$id}
 
-ban-manager-notify-discord-formart = {$days ->
+ban-manager-notify-discord-formart-days = {$days ->
                                         [one] dia
                                         *[other] dias
-                                     }
+                                        }
+
+ban-manager-notify-discord-formart-hours = {$hours ->
+                                        [one] hora
+                                        *[other] horas
+                                        }
+
+ban-manager-notify-discord-formart-minutes = {$minutes ->
+                                        [one] minuto
+                                        *[other] minutos
+                                        }
