@@ -10,7 +10,6 @@ namespace Content.Server.Administration.Managers;
 public sealed partial class BanManager
 {
     [Dependency] private readonly DiscordWebhook _discord = default!;
-    [Dependency] private readonly GameTicker _ticker = default!;
     private WebhookData? _webhook;
 
     private void InitializeDiscord()
@@ -27,7 +26,7 @@ public sealed partial class BanManager
     /// <summary>
     /// Send to webhook a server ban message.
     /// </summary>
-    private async void SendServerBanWebhook(ServerBanDef ban, string player, string admin)
+    private async void SendServerBanWebhook(ServerBanDef ban, string player, string admin, uint? minutes)
     {
         try
         {
@@ -37,21 +36,26 @@ public sealed partial class BanManager
             var hook = _webhook.Value.ToIdentifier();
 
             var id = ban.Id?.ToString() ?? "?";
+            var rId = ban.RoundId?.ToString() ?? "?";
+
+
 
             var footer = Loc.GetString("ban-manager-notify-discord-footer",
-                ("round", _ticker.RoundId),
-                ("id", id));
+                ("round", rId),
+                ("id", id)); // Todo: fallback
 
-            var message = Loc.GetString("ban-manager-notify-discord",
-                ("admin", admin),
-                ("player", player),
-                ("time", ban.BanTime),
-                ("reason", ban.Reason));
+            var message = "...";
 
             if (ban.ExpirationTime is null)
                 message = Loc.GetString("ban-manager-notify-discord-perma",
                 ("admin", admin),
                 ("player", player),
+                ("reason", ban.Reason));
+            else
+                message = Loc.GetString("ban-manager-notify-discord",
+                ("admin", admin),
+                ("player", player),
+                ("time", FormatTime(minutes)),
                 ("reason", ban.Reason));
 
             var payload = new WebhookPayload
@@ -70,7 +74,7 @@ public sealed partial class BanManager
     /// <summary>
     /// Send to webhook a role ban message.
     /// </summary>
-    private async void SendRoleBanWebhook(ServerRoleBanDef ban, string player, string admin)
+    private async void SendRoleBanWebhook(ServerRoleBanDef ban, string player, string admin, uint? minutes)
     { //roleban is SHIT, it send a message to every role
         try
         {
@@ -80,23 +84,26 @@ public sealed partial class BanManager
             var hook = _webhook.Value.ToIdentifier();
 
             var id = ban.Id?.ToString() ?? "?";
+            var rId = ban.RoundId?.ToString() ?? "?";
 
             var footer = Loc.GetString("ban-manager-notify-discord-footer",
-                ("round", _ticker.RoundId),
+                ("round", rId),
                 ("id", id));
 
-            var message = Loc.GetString("ban-manager-notify-discord-roleban",
-                ("admin", admin),
-                ("player", player),
-                ("role", ban.Role),
-                ("time", ban.BanTime),
-                ("reason", ban.Reason));
+            var message = "...";
 
             if (ban.ExpirationTime is null)
-                message = Loc.GetString("ban-manager-notify-discord-perma",
+                message = Loc.GetString("ban-manager-notify-discord-role-perma",
                 ("admin", admin),
                 ("role", ban.Role),
                 ("player", player),
+                ("reason", ban.Reason));
+            else
+                message = Loc.GetString("ban-manager-notify-discord-role",
+                ("admin", admin),
+                ("player", player),
+                ("role", ban.Role),
+                ("time", FormatTime(minutes)),
                 ("reason", ban.Reason));
 
             var payload = new WebhookPayload
@@ -110,5 +117,18 @@ public sealed partial class BanManager
         {
             _sawmill.Error($"Failed to send roleban information to webhook!\n{e}");
         }
+    }
+
+    private string FormatTime(uint? time)
+    {
+        if (time is null)
+            return "???";
+
+        var minutes = time ?? 0;
+
+        uint days = minutes / 1440;
+
+        return Loc.GetString("ban-manager-notify-discord-formart",
+        ("days", days));
     }
 }

@@ -2,6 +2,7 @@ using Robust.Shared.Configuration;
 
 namespace Content.Shared._Gabystation.CCVar;
 
+[CVarDefs]
 public sealed partial class GabyCVars
 {
     /// <summary>

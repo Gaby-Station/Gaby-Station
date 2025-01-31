@@ -186,7 +186,8 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
         _sawmill.Info(logMessage);
         _chat.SendAdminAlert(logMessage);
-        SendServerBanWebhook(banDef, targetName, adminName); // Gabystation - ban webhook
+        var user = targetUsername ?? "?"; // Gabystation - ban webhook
+        SendServerBanWebhook(banDef, user, adminName, minutes); // Gabystation - ban webhook
 
         KickMatchingConnectedPlayers(banDef, "newly placed ban");
     }
@@ -248,6 +249,9 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         _systems.TryGetEntitySystem(out GameTicker? ticker);
         int? roundId = ticker == null || ticker.RoundId == 0 ? null : ticker.RoundId;
         var playtime = target == null ? TimeSpan.Zero : (await _db.GetPlayTimes(target.Value)).Find(p => p.Tracker == PlayTimeTrackingShared.TrackerOverall)?.TimeSpent ?? TimeSpan.Zero;
+        var adminName = banningAdmin == null // Gabystation - Ban Webhook
+            ? Loc.GetString("system-user")
+            : (await _db.GetPlayerRecordByUserId(banningAdmin.Value))?.LastSeenUserName ?? Loc.GetString("system-user");
 
         var banDef = new ServerRoleBanDef(
             null,
@@ -272,6 +276,8 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
         var length = expires == null ? Loc.GetString("cmd-roleban-inf") : Loc.GetString("cmd-roleban-until", ("expires", expires));
         _chat.SendAdminAlert(Loc.GetString("cmd-roleban-success", ("target", targetUsername ?? "null"), ("role", role), ("reason", reason), ("length", length)));
+        var user = targetUsername ?? "?"; // Gabystation - ban webhook
+        SendRoleBanWebhook(banDef, user, adminName, minutes);
 
         if (target != null && _playerManager.TryGetSessionById(target.Value, out var session))
         {
