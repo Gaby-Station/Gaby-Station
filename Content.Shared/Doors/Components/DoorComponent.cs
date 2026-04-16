@@ -166,7 +166,17 @@ public sealed partial class DoorComponent : Component
     /// <summary>
     /// The key used when playing door opening/closing/emagging/deny animations.
     /// </summary>
-    public const string AnimationKey = "door_animation";
+    public const string OpenCloseKey = "door_animation_openclose";
+
+    /// <summary>
+    /// The key used when playing door deny animations.
+    /// </summary>
+    public const string DenyKey = "door_animation_deny";
+
+    /// <summary>
+    /// The key used when playing door emag animations.
+    /// </summary>
+    public const string EmagKey = "door_animation_emag";
 
     /// <summary>
     /// The sprite state used for the door when it's open.
