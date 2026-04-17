@@ -104,7 +104,7 @@ public sealed class DoorSystem : SharedDoorSystem
 
     private void OnAnimationCompleted(Entity<DoorComponent> ent, ref AnimationCompletedEvent args)
     {
-        if (!TryComp<SpriteComponent>(ent, out var sprite) || args.Key != DoorComponent.OpenCloseKey)
+        if (args.Key != DoorComponent.OpenCloseKey || !TryComp<SpriteComponent>(ent, out var sprite))
             return;
 
         switch (ent.Comp.State)
