@@ -179,7 +179,7 @@ public sealed class DoorSystem : SharedDoorSystem
 
                 return;
             case DoorState.Closing:
-                if (entity.Comp.ClosingAnimationTime == 0.0 || entity.Comp.CurrentlyCrushing.Count != 0)
+                if (entity.Comp.ClosingAnimationTime == 0.0)
                     return;
 
                 if (_animationSystem.HasRunningAnimation(entity, DoorComponent.OpenCloseKey))
