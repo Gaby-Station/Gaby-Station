@@ -283,6 +283,12 @@
   name: Syndi kek
   artist: blooodyspy
 
+- type: lobbyBackground
+  id: nukies-bridge
+  background: /Textures/LobbyScreens/nukies_bridge.webp
+  name: Nukies Bridge!!
+  artist: seyriix
+
 # Gabystation - lobby screens
 
 - type: lobbyBackground
