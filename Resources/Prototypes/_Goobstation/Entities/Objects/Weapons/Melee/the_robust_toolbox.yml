@@ -26,7 +26,7 @@
 
 - type: entity
   name: Singuloth's hammer
-  parent: SingularityHammer
+  parent: [SingularityHammer, BaseMagicalContraband]
   id: SingulothsHammer
   components:
   - type: Recallable # Gabystation
