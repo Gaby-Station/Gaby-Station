@@ -720,6 +720,10 @@
   - type: GameRule
     chaosScore: 240 #Dumont edit distracting and fucks up combat
   - type: VentClogRule
+    weakReagents:
+    - Slime
+    - SpaceGlue
+    - SpaceLube
 
 - type: entity
   id: SlimesSpawn
