@@ -31,6 +31,8 @@
 
 - type: lavalandRuinPool
   id: LavalandRuins
+  ruinDistance: 14
+  maxDistance: 172
   gridRuins:
     SyndicateBase: 1
     HierophantArena: 1
@@ -63,4 +65,4 @@
     Mug: 1
     Temple: 1
   dungeonRuins:
-    CommonRuin5x5: 60
+    CommonRuin5x5: 50
