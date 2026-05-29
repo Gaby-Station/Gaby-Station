@@ -163,6 +163,11 @@ using Robust.Shared.Replays;
 using Robust.Shared.Utility;
 using Content.Shared._RMC14.CCVar;
 
+// Goob start - the blind dont see
+using Content.Shared.Eye.Blinding.Components;
+using Content.Shared.Traits.Assorted;
+// Goob end
+
 namespace Content.Server.Chat.Systems;
 
 // TODO refactor whatever active warzone this class and chatmanager have become
@@ -905,6 +910,8 @@ public sealed partial class ChatSystem : SharedChatSystem
             // Goob edit start
             if (TryComp<DeafComponent>(listener, out var modifier) && language.SpeechOverride.RequireSpeech)
                 continue; // blocks anyone with the deaf component from hearing.
+            if (HasComp<PermanentBlindnessComponent>(listener) || HasComp<TemporaryBlindnessComponent>(listener))
+                continue; // block blind people from seeing subtle sign language gestures
             // Goob edit end
 
             // Einstein Engines - Language begin
@@ -1169,11 +1176,10 @@ public sealed partial class ChatSystem : SharedChatSystem
             EntityUid listener = session.AttachedEntity.Value;
 
             // Goob edit start
-            // Raises a event for the deaf component
-            var ev = new ChatMessageOverrideInVoiceRange();
+            // Raises a event for the deaf and blind component
+            var ev = new ChatMessageOverrideInRange(language.SpeechOverride.RequireSpeech, language.SpeechOverride.RequireSight);
             RaiseLocalEvent(listener, ref ev);
             if (channel == ChatChannel.Local
-                && language.SpeechOverride.RequireSpeech // Check for whether speech is required.
                 && ev.Cancelled)
                 continue;
             //Goob edit end
