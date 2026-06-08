@@ -295,6 +295,12 @@
   name: Nukies Bridge!!
   artist: seyriix
 
+- type: lobbyBackground
+  id: etzils-hungry
+  background: /Textures/LobbyScreens/etzilshungry.webp
+  name: Etzil's Hungry
+  artist: IdiotVibes
+
 # Gabystation - lobby screens
 
 - type: lobbyBackground
