@@ -4,8 +4,10 @@
 
 using Content.Server.Ghost;
 using Content.Shared._ES.DeathCutscene;
+using Content.Shared.Body.Events;
 using Content.Shared.Mind;
 using Content.Shared.Mobs;
+using Robust.Server.Player;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
@@ -15,13 +17,17 @@ public sealed class DeathCutsceneSystem : EntitySystem
 {
     [Dependency] private readonly GhostSystem _ghost = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<DeathCutsceneComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<ActiveDeathCutsceneComponent, BeingGibbedEvent>(OnBeingGibbed);
         SubscribeLocalEvent<ActiveDeathCutsceneComponent, PlayerDetachedEvent>(OnPlayerDetached);
     }
 
@@ -43,6 +49,28 @@ public sealed class DeathCutsceneSystem : EntitySystem
             StartCutscene(ent);
         else if (args.OldMobState == MobState.Dead)
             StopCutscene(ent.Owner);
+    }
+
+    private void OnBeingGibbed(Entity<ActiveDeathCutsceneComponent> ent, ref BeingGibbedEvent args)
+    {
+        if (!TryComp<ActorComponent>(ent, out var actor) || !_mind.TryGetMind(ent.Owner, out var mindId, out _))
+            return;
+
+        if (!TryComp<DeathCutsceneComponent>(ent, out var cutscene))
+            return;
+
+        var eye = Spawn(cutscene.EyePrototype, _transform.GetMapCoordinates(ent.Owner));
+        _metaData.SetEntityName(eye, Loc.GetString("death-cutscene-eye-name", ("name", Name(ent.Owner))));
+
+        var active = ent.Comp;
+        RemComp<ActiveDeathCutsceneComponent>(ent);
+
+        _mind.TransferTo(mindId, eye);
+        _player.SetAttachedEntity(actor.PlayerSession, eye);
+
+        var eyeActive = EnsureComp<ActiveDeathCutsceneComponent>(eye);
+        eyeActive.GhostTime = active.GhostTime;
+        eyeActive.CanReturnToBody = active.CanReturnToBody;
     }
 
     private void OnPlayerDetached(Entity<ActiveDeathCutsceneComponent> ent, ref PlayerDetachedEvent args)
@@ -91,6 +119,7 @@ public sealed class DeathCutsceneSystem : EntitySystem
     private void GhostPlayer(Entity<ActiveDeathCutsceneComponent> ent)
     {
         var canReturn = ent.Comp.CanReturnToBody;
+        var isEye = HasComp<DeathCutsceneEyeComponent>(ent);
         TryComp<ActorComponent>(ent, out var actor);
 
         RemComp<ActiveDeathCutsceneComponent>(ent);
@@ -100,5 +129,8 @@ public sealed class DeathCutsceneSystem : EntitySystem
 
         if (!ghosted && actor != null)
             StopClientCutscene(actor.PlayerSession);
+
+        if (isEye)
+            QueueDel(ent.Owner);
     }
 }
