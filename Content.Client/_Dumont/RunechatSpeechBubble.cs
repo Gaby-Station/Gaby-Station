@@ -1,4 +1,3 @@
-using System.Globalization;
 using System.Numerics;
 using System.Text;
 using Content.Client.Resources;
@@ -27,15 +26,20 @@ public sealed partial class RunechatSpeechBubble : SpeechBubble
     private const int ContinueTextLength = LongestText - 5;
     private const float SplitChunkSeconds = 4f;
     private const float SplitFinalSeconds = 6f;
-    private const float BaselineRunechatScale = 1.15f;
-    private const float DefaultRunechatScale = 2.5f;
+    private const float BaselineRunechatScale = 1f;
+    private const float DefaultRunechatScale = 1f;
     private const float MinimumRunechatScale = 0.5f;
     private const float MaximumRunechatScale = 2f;
-    private const float Ss13ChatWidth = 96f;
+    private const float Ss13ChatWidth = 192f;
     private const float Ss13WideChatWidth = Ss13ChatWidth * 2f;
+    private const string MainFontPath = "/Fonts/Minecraft/macs-minecraft.ttf";
+    private const string BoldFontPath = "/Fonts/Minecraft/macs-minecraft-Bold.ttf";
+    private const string ItalicFontPath = "/Fonts/Minecraft/macs-minecraft-Italic.ttf";
+    private const string WhisperFontPath = "/Fonts/TinyUnicode.ttf";
 
     private static readonly Color DefaultColor = Color.White;
     private static readonly Color LoocColor = Color.FromHex("#48d1cc");
+    private static readonly Color ScreamColor = Color.FromHex("#ff3333");
 
     public RunechatSpeechBubble(SpeechType type, ChatMessage message, EntityUid senderEntity)
         : base(
@@ -74,6 +78,9 @@ public sealed partial class RunechatSpeechBubble : SpeechBubble
         if (message.MessageColorOverride is { } color)
             return color;
 
+        if (type == SpeechType.Emote && IsScreamEmote(message.Message))
+            return ScreamColor;
+
         if (type == SpeechType.Looc)
             return LoocColor;
 
@@ -88,6 +95,9 @@ public sealed partial class RunechatSpeechBubble : SpeechBubble
 
     private static RunechatVisualStyle GetVisualStyle(ChatMessage message, string speechStyleClass, string text)
     {
+        if (speechStyleClass == EmoteStyle && IsScreamEmote(text))
+            return RunechatVisualStyle.Scream;
+
         if (speechStyleClass == EmoteStyle)
         {
             return IsYellEmote(text)
@@ -102,6 +112,11 @@ public sealed partial class RunechatSpeechBubble : SpeechBubble
             return RunechatVisualStyle.Whisper;
 
         return RunechatVisualStyle.Normal;
+    }
+
+    private static bool IsScreamEmote(string text)
+    {
+        return text.EndsWith("!!!", StringComparison.Ordinal);
     }
 
     private static bool IsYellEmote(string text)
@@ -209,6 +224,7 @@ public sealed partial class RunechatSpeechBubble : SpeechBubble
     }
 
     private readonly record struct RunechatVisualStyle(
+        string FontPath,
         int FontSize,
         bool UseBold,
         bool PrefixEmoteIcon,
@@ -216,14 +232,14 @@ public sealed partial class RunechatSpeechBubble : SpeechBubble
         float LineHeightOffset = 0f,
         bool UsePanicShake = false)
     {
-        public static readonly RunechatVisualStyle Normal = new(7, false, false, Ss13ChatWidth);
-        public static readonly RunechatVisualStyle Whisper = new(6, false, false, Ss13ChatWidth);
-        public static readonly RunechatVisualStyle Emote = new(6, false, true, Ss13ChatWidth, -1f);
-        public static readonly RunechatVisualStyle EmoteYell = new(9, true, true, Ss13ChatWidth);
-        public static readonly RunechatVisualStyle Bolded = new(8, true, false, Ss13ChatWidth);
-        public static readonly RunechatVisualStyle Announce = new(12, true, false, Ss13WideChatWidth);
-        public static readonly RunechatVisualStyle Pain = new(10, true, false, Ss13ChatWidth);
-        public static readonly RunechatVisualStyle Scream = new(10, true, false, Ss13ChatWidth, UsePanicShake: true);
+        public static readonly RunechatVisualStyle Normal = new(MainFontPath, 11, false, false, Ss13ChatWidth);
+        public static readonly RunechatVisualStyle Whisper = new(WhisperFontPath, 20, false, false, Ss13ChatWidth);
+        public static readonly RunechatVisualStyle Emote = new(ItalicFontPath, 10, false, true, Ss13ChatWidth, -1f);
+        public static readonly RunechatVisualStyle EmoteYell = new(BoldFontPath, 14, false, true, Ss13ChatWidth);
+        public static readonly RunechatVisualStyle Bolded = new(BoldFontPath, 12, false, false, Ss13ChatWidth);
+        public static readonly RunechatVisualStyle Announce = new(BoldFontPath, 16, false, false, Ss13WideChatWidth);
+        public static readonly RunechatVisualStyle Pain = new(BoldFontPath, 14, false, false, Ss13ChatWidth);
+        public static readonly RunechatVisualStyle Scream = new(BoldFontPath, 16, false, false, Ss13ChatWidth, UsePanicShake: true);
 
         public int GetScaledFontSize(float scale)
         {
@@ -243,15 +259,13 @@ public sealed partial class RunechatSpeechBubble : SpeechBubble
 
     private sealed partial class RunechatTextControl : Control
     {
-        private const string SmallFontsFamily = "Small Fonts";
-        private const string SmallFonts120Family = "Small Fonts (120)";
-        private const string FallbackFontPath = "/Fonts/Cozette/CozetteVector.ttf";
-        private const float MaximumAlpha = 196f / 255f;
+        private const float MaximumAlpha = 1f;
         private const float SyntheticBoldOffset = 1f;
-        private const float TextShadowAlpha = 0.18f;
-        private const float TextShadowOffset = 1f;
+        private const float TextShadowAlpha = 0.55f;
+        private const float TextShadowOffset = 3f;
+        private const float OutlineThickness = 2f;
         private const float EmoteIconBaseSize = 9f;
-        private const float DefaultEmoteIconPixelSize = 1.4f;
+        private const float DefaultEmoteIconPixelSize = 2f;
         private const float PanicShakeDuration = 0.85f;
         private const float PanicShakeFrequency = 18f;
         private const float PanicShakeSize = 6f;
@@ -262,9 +276,6 @@ public sealed partial class RunechatSpeechBubble : SpeechBubble
         private const float EmoteIconAlpha = 200f / 255f;
 
         private static readonly Color EmoteIconBlue = Color.FromHex("#3399ff");
-        private static readonly CultureInfo EnUsCulture = CultureInfo.GetCultureInfo("en-US");
-        private static bool SmallFontsLoadFailed;
-
         private static readonly string[] EmoteIcon =
         {
             ".........",
@@ -280,7 +291,6 @@ public sealed partial class RunechatSpeechBubble : SpeechBubble
 
         [Dependency] private IConfigurationManager _configManager = default!;
         [Dependency] private IResourceCache _resourceCache = default!;
-        [Dependency] private ISystemFontManager _systemFontManager = default!;
 
         private readonly IReadOnlyList<string> _pages;
         private readonly Color _color;
@@ -305,7 +315,7 @@ public sealed partial class RunechatSpeechBubble : SpeechBubble
             _style = style;
             _scale = DefaultRunechatScale *
                      Math.Clamp(_configManager.GetCVar(CCVars.ChatRunechatBubbleScale), MinimumRunechatScale, MaximumRunechatScale);
-            _font = LoadRunechatFont(style.GetScaledFontSize(_scale));
+            _font = LoadRunechatFont(style.FontPath, style.GetScaledFontSize(_scale));
         }
 
         protected override void FrameUpdate(FrameEventArgs args)
@@ -345,7 +355,7 @@ public sealed partial class RunechatSpeechBubble : SpeechBubble
             var outlineColor = Color.Black.WithAlpha(textOpacity);
             var textColor = _color.WithAlpha(_color.A * textOpacity);
             var lineHeight = GetLineHeight();
-            var y = (PixelSize.Y - layout.Height) / 2f;
+            var y = MathF.Round((PixelSize.Y - layout.Height) / 2f);
             var shakeOffset = GetPanicShakeOffset();
 
             for (var i = 0; i < layout.Lines.Count; i++)
@@ -355,7 +365,7 @@ public sealed partial class RunechatSpeechBubble : SpeechBubble
                 var iconWidth = _style.PrefixEmoteIcon && i == 0 ? GetVisibleIconWidth() : 0f;
                 var iconGap = iconWidth > 0f ? GetIconGap() : 0f;
                 var contentWidth = iconWidth + iconGap + visibleBounds.Width;
-                var x = (PixelSize.X - contentWidth) / 2f + iconWidth + iconGap - visibleBounds.Left + shakeOffset;
+                var x = MathF.Round((PixelSize.X - contentWidth) / 2f + iconWidth + iconGap - visibleBounds.Left + shakeOffset);
                 var position = new Vector2(x, y);
 
                 if (_style.PrefixEmoteIcon && i == 0)
@@ -586,7 +596,7 @@ public sealed partial class RunechatSpeechBubble : SpeechBubble
                 return 0f;
 
             var amount = PanicShakeSize * _scale / BaselineRunechatScale * UIScale;
-            return MathF.Sin(_animationTime * MathF.PI * PanicShakeFrequency) * amount;
+            return MathF.Round(MathF.Sin(_animationTime * MathF.PI * PanicShakeFrequency) * amount);
         }
 
         private float GetIconGap()
@@ -596,7 +606,7 @@ public sealed partial class RunechatSpeechBubble : SpeechBubble
 
         private float GetSyntheticBoldOffset()
         {
-            return SyntheticBoldOffset * UIScale;
+            return MathF.Max(1f, MathF.Round(SyntheticBoldOffset * UIScale));
         }
 
         private float GetVisibleIconLeft()
@@ -626,19 +636,19 @@ public sealed partial class RunechatSpeechBubble : SpeechBubble
             Color outlineColor,
             Color textColor)
         {
-            var shadowOffset = TextShadowOffset * _scale * UIScale;
+            var shadowOffset = MathF.Max(1f, MathF.Round(TextShadowOffset * _scale * UIScale));
             var shadowColor = Color.Black.WithAlpha(textColor.A * TextShadowAlpha);
-            var outlineOffset = _scale * UIScale;
+            var outlineThickness = Math.Max(1, (int) MathF.Round(OutlineThickness * _scale * UIScale));
             DrawStringPass(handle, position + new Vector2(shadowOffset, shadowOffset), text, shadowColor);
 
-            for (var x = -1; x <= 1; x++)
+            for (var x = -outlineThickness; x <= outlineThickness; x++)
             {
-                for (var y = -1; y <= 1; y++)
+                for (var y = -outlineThickness; y <= outlineThickness; y++)
                 {
                     if (x == 0 && y == 0)
                         continue;
 
-                    DrawStringPass(handle, position + new Vector2(x * outlineOffset, y * outlineOffset), text, outlineColor);
+                    DrawStringPass(handle, position + new Vector2(x, y), text, outlineColor);
                 }
             }
 
@@ -659,7 +669,7 @@ public sealed partial class RunechatSpeechBubble : SpeechBubble
             Color outlineColor,
             Color textColor)
         {
-            var scale = MathF.Max(1f, GetIconPixelSize() * UIScale);
+            var scale = MathF.Max(1f, MathF.Round(GetIconPixelSize() * UIScale));
             var iconOrigin = position;
 
             var iconAlpha = textColor.A * EmoteIconAlpha;
@@ -694,60 +704,10 @@ public sealed partial class RunechatSpeechBubble : SpeechBubble
             handle.DrawRect(UIBox2.FromDimensions(position, size), color);
         }
 
-        private Font LoadRunechatFont(int size)
+        private Font LoadRunechatFont(string path, int size)
         {
             size = Math.Max(1, size);
-
-            if (!SmallFontsLoadFailed && TryGetSmallFontsFace() is { } face)
-            {
-                try
-                {
-                    return face.Load(size);
-                }
-                catch
-                {
-                    SmallFontsLoadFailed = true;
-                }
-            }
-
-            return _resourceCache.GetFont(FallbackFontPath, size);
-        }
-
-        private ISystemFontFace? TryGetSmallFontsFace()
-        {
-            if (!_systemFontManager.IsSupported)
-                return null;
-
-            ISystemFontFace? fallback = null;
-
-            foreach (var face in _systemFontManager.SystemFontFaces)
-            {
-                if (!IsSmallFontsFace(face))
-                    continue;
-
-                fallback ??= face;
-
-                if (face.Weight == FontWeight.Regular && face.Slant == FontSlant.Normal)
-                    return face;
-            }
-
-            return fallback;
-        }
-
-        private static bool IsSmallFontsFace(ISystemFontFace face)
-        {
-            return IsSmallFontsName(face.FamilyName) ||
-                   IsSmallFontsName(face.FullName) ||
-                   IsSmallFontsName(face.GetLocalizedFamilyName(CultureInfo.InvariantCulture)) ||
-                   IsSmallFontsName(face.GetLocalizedFullName(CultureInfo.InvariantCulture)) ||
-                   IsSmallFontsName(face.GetLocalizedFamilyName(EnUsCulture)) ||
-                   IsSmallFontsName(face.GetLocalizedFullName(EnUsCulture));
-        }
-
-        private static bool IsSmallFontsName(string name)
-        {
-            return name.Equals(SmallFontsFamily, StringComparison.OrdinalIgnoreCase) ||
-                   name.Equals(SmallFonts120Family, StringComparison.OrdinalIgnoreCase);
+            return _resourceCache.GetFont(path, size);
         }
 
         private sealed record RunechatPageLayout(
