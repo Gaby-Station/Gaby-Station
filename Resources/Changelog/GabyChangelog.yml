@@ -3985,3 +3985,33 @@ Entries:
       message: concerta bug do ftl e dock.
   id: 469
   time: '2026-09-04T12:29:05.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Tweak
+      message: A Segurança agora é um azul mais forte.
+  id: 470
+  time: '2026-09-04T22:48:45.0000000+00:00'
+- author: Struater
+  changes:
+    - type: Add
+      message: Adicionado o Pod de Assalto para os nukes.
+    - type: Add
+      message: >-
+        ALERTA: Objeto de hipervelocidade em colisão com a estação em 5
+        segundos!
+  id: 471
+  time: '2026-09-05T14:26:15.0000000+00:00'
+- author: Unlimited-Pii
+  changes:
+    - type: Tweak
+      message: >-
+        Reformulado por completo requisitos de horas para diversas funções
+        antagonistas e da tripulação.
+  id: 472
+  time: '2026-09-05T14:53:46.0000000+00:00'
+- author: OnFeKion
+  changes:
+    - type: Add
+      message: reagentes agora estão em português
+  id: 473
+  time: '2026-09-05T15:54:20.0000000+00:00'
