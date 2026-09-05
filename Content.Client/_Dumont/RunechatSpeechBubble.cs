@@ -36,6 +36,7 @@ public sealed partial class RunechatSpeechBubble : SpeechBubble
     private const string BoldFontPath = "/Fonts/Minecraft/macs-minecraft-Bold.ttf";
     private const string ItalicFontPath = "/Fonts/Minecraft/macs-minecraft-Italic.ttf";
     private const string WhisperFontPath = "/Fonts/TinyUnicode.ttf";
+    private const float EmoteColorLightenAmount = 0.18f;
 
     private static readonly Color DefaultColor = Color.White;
     private static readonly Color LoocColor = Color.FromHex("#48d1cc");
@@ -90,7 +91,10 @@ public sealed partial class RunechatSpeechBubble : SpeechBubble
 
         var uiManager = IoCManager.Resolve<IUserInterfaceManager>();
         var chatController = uiManager.GetUIController<ChatUIController>();
-        return Color.FromHex(chatController.GetNameColor(metadata.EntityName));
+        var nameColor = Color.FromHex(chatController.GetNameColor(metadata.EntityName));
+        return type == SpeechType.Emote
+            ? Color.InterpolateBetween(nameColor, Color.White, EmoteColorLightenAmount)
+            : nameColor;
     }
 
     private static RunechatVisualStyle GetVisualStyle(ChatMessage message, string speechStyleClass, string text)
