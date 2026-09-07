@@ -4,7 +4,7 @@
 
 - type: entity
   parent: BasePlushie
-  id: PlushieEllen
+  id: Plushie_Ellen
   name: Ellen plushie
   description: Clearly a custom Janie plush, which goes against the NanoTrasen rules.
   components:
