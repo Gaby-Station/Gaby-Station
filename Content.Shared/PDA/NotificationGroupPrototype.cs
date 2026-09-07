@@ -25,4 +25,7 @@ public sealed partial class NotificationGroupPrototype : IPrototype {
     [DataField]
     public HashSet<ProtoId<AccessLevelPrototype>>? Access = null;
 
+    [DataField]
+    public HashSet<ProtoId<AccessLevelPrototype>>? Exclude = null;
+
 }

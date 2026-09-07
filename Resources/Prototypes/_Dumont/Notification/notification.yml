@@ -7,6 +7,8 @@
 
 - type: notificationGroup
   id: StationAlerts
+  exclude:
+  - Salvage
 
 - type: notificationGroup
   id: CaptainOnly
@@ -32,12 +34,6 @@
   id: JanitorAlerts
   access:
   - Janitor
-
-- type: notificationGroup
-  id: CargoSansSalvage
-  access:
-  - CargoTechnician
-  - Quartermaster
 
 - type: notificationGroup
   id: CargoAlerts
