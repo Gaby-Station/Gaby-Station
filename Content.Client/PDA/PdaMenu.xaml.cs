@@ -246,11 +246,10 @@ namespace Content.Client.PDA
                 foreach (var noti in notifications) {
                     BoxContainer notificationContainer = new();
 
-                    Label messageLabel = new();
+                    RichTextLabel messageLabel = new();
                     Label timeLabel = new();
 
-                    messageLabel.Text = WrapMessage(FormattedMessage.RemoveMarkupOrThrow(noti.Message), 70);
-                    messageLabel.ClipText = false;
+                    messageLabel.Text = noti.Message;
                     messageLabel.Margin = new Thickness(15, 0);
 
                     timeLabel.Text = noti.Time.ToString(@"hh\:mm\:ss");
@@ -404,35 +403,6 @@ namespace Content.Client.PDA
             {
                 view.Visible = false;
             }
-        }
-
-        private string WrapMessage(string message, int maxCharacters) {
-            if (message.Length < maxCharacters)
-                return message;
-
-            string[] words = message.Split(" ");
-            List<string> lines = new();
-            List<string> currentLine = new();
-            int currentLineLength = 0;
-
-            foreach (string word in words) {
-                if (currentLineLength + word.Length + (currentLineLength == 0 ? 0 : 1) > maxCharacters) {
-                    lines.Add(string.Join(" ", currentLine));
-                    currentLine.Clear();
-
-                    currentLine.Add(word);
-                    currentLineLength = word.Length;
-                }
-                else {
-                    currentLine.Add(word);
-                    currentLineLength += word.Length + 1;
-                }
-            }
-
-            if (currentLine.Count > 0)
-                lines.Add(string.Join(" ", currentLine));
-
-            return string.Join("\n", lines);
         }
 
         protected override void Draw(DrawingHandleScreen handle)
