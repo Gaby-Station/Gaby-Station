@@ -106,6 +106,48 @@ guide-entry-sauces = Condimentos
 
 guide-entry-rules-r21 = R21
 
+
+# Novas Regras
+
+
+guide-entry-rules-x1 = X1
+guide-entry-rules-x2 = X2
+guide-entry-rules-sl0 = S10
+guide-entry-rules-sl1 = S11
+guide-entry-rules-sl2 = S12
+guide-entry-rules-sl3 = S13
+guide-entry-rules-sl4 = S14
+guide-entry-rules-sl5 = S15
+guide-entry-rules-sl6 = S16
+guide-entry-rules-sl7 = S17
+guide-entry-rules-sl8 = S18
+guide-entry-rules-sl9 = S19
+guide-entry-rules-sl10 = SL10
+guide-entry-rules-sl11 = SL11
+guide-entry-rules-sl12 = SL12
+guide-entry-rules-sl13 = SL13
+guide-entry-rules-sl14 = SL14
+guide-entry-rules-sl15 = SL15
+guide-entry-rules-sl16 = SL16
+guide-entry-rules-a1 = A1
+guide-entry-rules-a2 = A2
+guide-entry-rules-a3 = A3
+guide-entry-rules-a4 = A4
+guide-entry-rules-a5 = A5
+guide-entry-rules-a6 = A6
+guide-entry-rules-a7 = A7
+guide-entry-rules-a8 = A8
+guide-entry-rules-a9 = A9
+guide-entry-rules-a10 = A10
+guide-entry-rules-a11 = A11
+guide-entry-rules-a12 = A12
+guide-entry-rules-a13 = A13
+guide-entry-rules-a14 = A14
+
+
+guide-entry-rules-sandbox = Antagônista
+guide-entry-rules-antag = Sandbox
+
 # Nova Lei Espacial
 
 guide-entry-space-law-homicide = Homícidio
