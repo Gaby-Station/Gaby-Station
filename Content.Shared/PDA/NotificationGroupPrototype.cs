@@ -25,6 +25,13 @@ public sealed partial class NotificationGroupPrototype : IPrototype {
     [DataField]
     public HashSet<ProtoId<AccessLevelPrototype>>? Access = null;
 
+    /// <summary>
+    /// Excludes PDAs. A given notification group will represent a
+    /// range of PDAs which both have access as defined by AccessGroups
+    /// and Access and do not have accesses in the Exclude field.
+    /// If both AcessGroups and Access are null (i.e the group
+    /// emcompases all PDAs) then Exclude is not applicabe
+    /// </summary>
     [DataField]
     public HashSet<ProtoId<AccessLevelPrototype>>? Exclude = null;
 

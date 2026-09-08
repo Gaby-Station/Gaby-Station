@@ -7,25 +7,9 @@
 
 - type: notificationGroup
   id: StationAlerts
-  exclude:
-  - Salvage
 
 - type: notificationGroup
   id: CaptainOnly
-  access:
-  - Captain
-
-- type: notificationGroup
-  id: EngineeringAlerts
-  accessGroups:
-  - Engineering
-  access:
-  - Captain
-
-- type: notificationGroup
-  id: SecurityAlerts
-  accessGroups:
-  - Security
   access:
   - Captain
 
@@ -35,12 +19,13 @@
   access:
   - Janitor
 
-- type: notificationGroup
-  id: CargoAlerts
-  accessGroups:
-  - Cargo
-  access:
-  - Captain
+# Com os cargo tendo acesso de Salvage isso não é possivel, atualmente.
+# - type: notificationGroup
+#   id: BountyAlert
+#   access:
+#   - CargoTechnician
+#   exclude:
+#   - Salvage
 
 - type: notificationGroup
   id: MedicalDepartment
@@ -55,7 +40,7 @@
 - type: notificationGroup
   id: ScienceDepartment
   accessGroups:
-  - Science
+  - Research
 
 - type: notificationGroup
   id: SecurityDepartment

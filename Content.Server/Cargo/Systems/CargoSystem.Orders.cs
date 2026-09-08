@@ -803,7 +803,7 @@ namespace Content.Server.Cargo.Systems
                 ("person", order.Approver ?? "Unknown")
             );
 
-            var ev = new PdaNotificationEvent(message, "CargoAlerts", false);
+            var ev = new PdaNotificationEvent(message, "CargoDepartment", false);
             RaiseLocalEvent(ev);
 
             return true;

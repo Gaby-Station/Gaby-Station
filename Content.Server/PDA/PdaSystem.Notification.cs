@@ -20,7 +20,7 @@ namespace Content.Server.PDA
 
         private ISawmill _sawmill = default!;
 
-        public void OnPdaNotification(PdaNotificationEvent args)
+        private void OnPdaNotification(PdaNotificationEvent args)
         {
             _sawmill = _log.GetSawmill("pda_notification");
 
@@ -30,7 +30,7 @@ namespace Content.Server.PDA
             }
 
             if (notiGroupProto.Access is null && notiGroupProto.AccessGroups is null) {
-                PdaNotifyAll(args);
+                PdaNotifyAll(args, notiGroupProto);
                 return;
             }
 
@@ -61,7 +61,7 @@ namespace Content.Server.PDA
 
         }
 
-        public bool PdaNotifyByAccess(
+        private bool PdaNotifyByAccess(
             Entity<PdaComponent> pda,
             HashSet<ProtoId<AccessLevelPrototype>> accessNoti,
             HashSet<ProtoId<AccessLevelPrototype>>? exclude,
@@ -78,7 +78,7 @@ namespace Content.Server.PDA
             return true;
         }
 
-        public bool PdaNotifyByGroups(
+        private bool PdaNotifyByGroups(
             Entity<PdaComponent> pda,
             HashSet<ProtoId<AccessGroupPrototype>> notiGroup,
             HashSet<ProtoId<AccessLevelPrototype>>? exclude,
@@ -96,11 +96,16 @@ namespace Content.Server.PDA
             return false;
         }
 
-        public void PdaNotifyAll(PdaNotificationEvent args) {
+        public void PdaNotifyAll(PdaNotificationEvent args, NotificationGroupPrototype? proto = null) {
             var query = EntityQueryEnumerator<PdaComponent>();
 
             while (query.MoveNext(out var uid, out var comp)) {
                 if (!IsValidPda(args, uid, comp, out var accessLevels) || accessLevels is null)
+                    continue;
+
+                if (proto is { } prototype &&
+                    prototype.Exclude is { } exclusion &&
+                    exclusion.Intersect(accessLevels).Any())
                     continue;
 
                 NotifyPda((uid, comp), args.Message, args.IsLoud);
@@ -117,7 +122,7 @@ namespace Content.Server.PDA
             UpdatePdaUi(ent.Owner, ent.Comp);
         }
 
-        public bool TryGetAccessLevels(PdaComponent pda, out HashSet<ProtoId<AccessLevelPrototype>>? accessLevels) {
+        private bool TryGetAccessLevels(PdaComponent pda, out HashSet<ProtoId<AccessLevelPrototype>>? accessLevels) {
             accessLevels = null;
 
             if (pda.IdSlot.Item is not { } idCardUid)
@@ -130,7 +135,7 @@ namespace Content.Server.PDA
             return true;
         }
 
-        public bool IsValidPda(PdaNotificationEvent args, EntityUid uid, PdaComponent pda, out HashSet<ProtoId<AccessLevelPrototype>>? accessLevels) {
+        private bool IsValidPda(PdaNotificationEvent args, EntityUid uid, PdaComponent pda, out HashSet<ProtoId<AccessLevelPrototype>>? accessLevels) {
             if (!TryGetAccessLevels(pda, out accessLevels))
                 return false;
 

@@ -224,7 +224,7 @@ public sealed partial class CriminalRecordsConsoleSystem : SharedCriminalRecords
 
         var ev = new PdaNotificationEvent(
             Loc.GetString($"criminal-records-console-{statusString}", args),
-            "SecurityAlerts", false,
+            "SecurityDepartment", false,
             _station.GetOwningStation(ent.Owner)); // Dumont
 
         RaiseLocalEvent(ev);
