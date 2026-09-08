@@ -4021,3 +4021,9 @@ Entries:
       message: Troca o chat do ss13 por uma versão mais estável
   id: 474
   time: '2026-09-06T18:22:53.0000000+00:00'
+- author: Lucasalemao10
+  changes:
+    - type: Add
+      message: Goob merge até 08/06, verifique as mudanças do goob!
+  id: 475
+  time: '2026-09-08T04:52:13.0000000+00:00'
