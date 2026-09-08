@@ -5,7 +5,6 @@
 
 using System.Numerics;
 using Robust.Shared.Serialization;
-using Robust.Shared.Utility;
 
 namespace Content.Goobstation.Shared.SpecialAnimation;
 
@@ -97,10 +96,19 @@ public sealed partial class SpecialAnimationData
     #endregion
 
     /// <summary>
-    /// The sprite to use for an animation.
+    /// Entity to use for a sprite.
+    /// Animation will fail to play if entity doesn't exist on client on its start.
     /// </summary>
     [ViewVariables]
-    public SpriteSpecifier Sprite;
+    public NetEntity Source;
+
+    /// <summary>
+    /// Entity that is used to draw a sprite from. Copies SpriteComponent from
+    /// the Source and then uses it, so it won't break when Source leaves our PVS range.
+    /// </summary>
+    [ViewVariables]
+    [NonSerialized]
+    public EntityUid? AnimationEntity;
 
     /// <summary>
     /// How long this animation has been playing for.
@@ -150,7 +158,7 @@ public sealed partial class SpecialAnimationData
         TextOverrideColor = Color.White,
         TextPosition = new Vector2(-250, 100),
         TextFontSize = 26,
-        TextFontPath = "/Fonts/NotoSans/NotoSans-Bold.ttf",
+        TextFontPath = "/Fonts/NotoSans/NotoSans-Bold.ttf", // Bald.
     };
 
     /// <summary>
@@ -159,6 +167,19 @@ public sealed partial class SpecialAnimationData
     public SpecialAnimationData WithText(string text)
     {
         Text = text;
+        return this;
+    }
+
+    /// <summary>
+    /// Sets some sprite source to the animation.
+    /// </summary>
+    /// <remarks>
+    /// Make sure that this entity is loaded in PVS
+    /// for the client that this animation is addressed to.
+    /// </remarks>
+    public SpecialAnimationData WithSource(NetEntity source)
+    {
+        Source = source;
         return this;
     }
 }

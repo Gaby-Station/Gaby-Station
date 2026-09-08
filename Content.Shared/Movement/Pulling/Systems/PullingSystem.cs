@@ -100,7 +100,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.Grab;
-using Content.Shared._Shitcode.Heretic.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Alert;
@@ -242,7 +241,7 @@ public sealed class PullingSystem : EntitySystem
         // and clear it.
         foreach (var held in _handsSystem.EnumerateHeld((uid, component)))
         {
-            if (!TryComp(held, out VirtualItemComponent? virtualItem) || GetRelayedEntity(virtualItem.BlockingEntity) != args.PulledUid) // Goob edit
+            if (!TryComp(held, out VirtualItemComponent? virtualItem) || virtualItem.BlockingEntity != args.PulledUid)
                 continue;
 
             _handsSystem.TryDrop((args.PullerUid, component), held);
@@ -311,10 +310,10 @@ public sealed class PullingSystem : EntitySystem
     private void OnVirtualItemDeleted(Entity<PullerComponent> ent, ref VirtualItemDeletedEvent args)
     {
         // If client deletes the virtual hand then stop the pull.
-        if (ent.Comp.Pulling == null || ent.Comp.Pulling != GetRelayedEntity(args.BlockingEntity)) // Goob edit
+        if (ent.Comp.Pulling == null || ent.Comp.Pulling != args.BlockingEntity)
             return;
 
-        if (TryComp(ent.Comp.Pulling, out PullableComponent? pullableComp)) // Goob edit
+        if (TryComp(args.BlockingEntity, out PullableComponent? pullableComp))
             TryStopPull(ent.Comp.Pulling.Value, pullableComp, ent.Owner);
     }
 
@@ -360,9 +359,6 @@ public sealed class PullingSystem : EntitySystem
         if (args.Handled)
             return;
 
-        if (!_blocker.CanInteract(ent, null))
-            return;
-
         args.Handled = TryStopPull(ent, ent, ent);
     }
 
@@ -382,9 +378,7 @@ public sealed class PullingSystem : EntitySystem
         if (!args.CanAccess || !args.CanInteract)
             return;
 
-        var target = GetRelayedEntity(args.Target); // Trauma
-
-        if (args.User == target) // Trama - args.Target -> target
+        if (args.User == args.Target)
             return;
 
         //TODO VERB ICONS add pulling icon
@@ -398,12 +392,12 @@ public sealed class PullingSystem : EntitySystem
             };
             args.Verbs.Add(verb);
         }
-        else if (CanPull(args.User, target)) // Trauma - args.Target -> target
+        else if (CanPull(args.User, args.Target))
         {
             Verb verb = new()
             {
                 Text = Loc.GetString("pulling-verb-get-data-text"),
-                Act = () => TryStartPull(args.User, target), // Trauma - args.Target -> target
+                Act = () => TryStartPull(args.User, args.Target),
                 DoContactInteraction = false // pulling handle its own contact interaction.
             };
             args.Verbs.Add(verb);
@@ -777,15 +771,5 @@ public sealed class PullingSystem : EntitySystem
         if (stopPuller && TryComp<PullerComponent>(uid, out var puller) &&
             TryComp(puller.Pulling, out PullableComponent? pullableEnt))
             TryStopPull(puller.Pulling.Value, pullableEnt);
-    }
-
-    // Goobstation
-    public EntityUid GetRelayedEntity(EntityUid uid)
-    {
-        if (TryComp(uid, out TargetInteractionRelayComponent? relay) && relay.RelayPulls &&
-            Exists(relay.RelayEntity))
-            return relay.RelayEntity.Value;
-
-        return uid;
     }
 }

@@ -224,7 +224,6 @@
     - PetWearable
     - WhitelistChameleon
     - SecurityBreathMask
-    - GasMask # Goobstation
   - type: Hailer # Goobstation - Hailer
   - type: IngestionBlocker # Goobstation
     blockSmokeIngestion: true
@@ -255,7 +254,6 @@
     - PetWearable
     - WhitelistChameleon
     - SyndicateBreathMask
-    - GasMask # Goobstation
   - type: IngestionBlocker # Goobstation
     blockSmokeIngestion: true
 
@@ -461,9 +459,6 @@
   - type: HideLayerClothing
     slots:
     - Snout
-  - type: SpeakFontOverride # Goob - clown speaks pink comic sans
-    fontId: LDFComicSans
-    color: "#e93790"
 
 - type: entity
   parent: ClothingMaskClownBase
@@ -674,7 +669,6 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - GasMask
   - type: HideLayerClothing
     slots:
     - Hair
@@ -738,7 +732,6 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - GasMask # Goobstation
   - type: HideLayerClothing
     slots:
     - Hair
@@ -783,8 +776,7 @@
         Piercing: 0.75
         Heat: 0.75
   - type: Tag
-    tags: # ignore "WhitelistChameleon" tag
-    - GasMask # Goobstation
+    tags: [] # ignore "WhitelistChameleon" tag
   # Goobstation
   - type: DiseaseProtection
     # full immunity
@@ -1111,7 +1103,6 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - GasMask # Goobstation
   - type: HideLayerClothing
     slots:
     - Snout

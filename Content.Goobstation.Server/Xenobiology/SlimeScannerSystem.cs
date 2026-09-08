@@ -10,8 +10,7 @@ using System.Linq;
 using System.Text;
 
 namespace Content.Goobstation.Server.Xenobiology;
-
-public sealed class SlimeScannerSystem : EntitySystem
+public sealed partial class SlimeScannerSystem : EntitySystem
 {
     [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
     [Dependency] private readonly IPrototypeManager _prot = default!;
@@ -54,15 +53,14 @@ public sealed class SlimeScannerSystem : EntitySystem
 
     private string GenerateSlimeMarkup(Entity<SlimeComponent> ent)
     {
-        var mutationChancePercent = MathF.Floor(ent.Comp.MutationChance * 100f);
-        var breedName = Loc.GetString(ent.Comp.BreedName);
+        var mutationChance = MathF.Floor(ent.Comp.MutationChance * 100f);
 
         var sb = new StringBuilder();
 
-        sb.AppendLine(Loc.GetString("slime-scanner-examine-slime-description", ("color", ent.Comp.SlimeColor.ToHex()), ("name", breedName)));
+        sb.AppendLine(Loc.GetString("slime-scanner-examine-slime-description", ("color", ent.Comp.SlimeColor.ToHex()), ("name", _prot.Index(ent.Comp.Breed).BreedName)));
 
         // all this shit for a good looking examine text. imagine.
-        sb.Append($"{Loc.GetString("slime-scanner-examine-slime-mutations", ("chance", mutationChancePercent))} ");
+        sb.Append($"{Loc.GetString("slime-scanner-examine-slime-mutations", ("chance", mutationChance))} ");
         var mutations = ent.Comp.PotentialMutations.ToList();
         for (int i = 0; i < mutations.Count; i++)
         {
@@ -71,14 +69,12 @@ public sealed class SlimeScannerSystem : EntitySystem
             var color = "white";
             // todo make the colors work
             if (info.Components.TryGetComponent(nameof(SlimeComponent), out var sc))
-                color = ((SlimeComponent) sc).SlimeColor.ToHex();
+                color = ((SlimeComponent) sc!).SlimeColor.ToHex();
 
-            sb.Append($"[color={color}]{breedName}[/color]");
+            sb.Append($"[color={color}]{info.BreedName}[/color]");
 
-            if (i == mutations.Count - 1)
-                sb.AppendLine(".");
-            else
-                sb.Append(", ");
+            if (i == mutations.Count - 1) sb.AppendLine(".");
+            else sb.Append(", ");
         }
 
         sb.AppendLine(Loc.GetString("slime-scanner-examine-slime-extracts", ("num", ent.Comp.ExtractsProduced)));
@@ -116,16 +112,12 @@ public sealed class SlimeScannerSystem : EntitySystem
                     continue;
 
                 // jic
-                if (i == reagents.Count - 1)
-                    sb.Append("; ");
-                else
-                    sb.Append(", ");
+                if (i == reagents.Count - 1) sb.Append("; ");
+                else sb.Append(", ");
             }
 
-            if (i == reactions.Count - 1)
-                sb.AppendLine(".");
-            else
-                sb.Append(", ");
+            if (i == reactions.Count - 1) sb.AppendLine(".");
+            else sb.Append(", ");
         }
 
         return sb.ToString();

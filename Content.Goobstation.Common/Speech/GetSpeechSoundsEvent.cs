@@ -6,4 +6,4 @@
 namespace Content.Goobstation.Common.Speech;
 
 [ByRefEvent]
-public record struct GetSpeechSoundEvent(string? SpeechSoundProtoId = null, bool Handled = false);
+public record struct GetSpeechSoundEvent(string? SpeechSoundProtoId = null);

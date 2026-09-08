@@ -2,10 +2,10 @@
   id: NamesSlasher
   values:
     prefix: names-slasher-dataset-
-    count: 33
+    count: 32
 
 - type: localizedDataset
   id: NamesSlasherTitle
   values:
     prefix: names-slasher-title-dataset-
-    count: 30
+    count: 28

@@ -24,13 +24,13 @@ public sealed partial class SlasherRegenerateComponent : Component
     /// <summary>
     /// The reagent to inject
     /// </summary>
-    [DataField]
+    [DataField("reagent")]
     public ProtoId<ReagentPrototype> Reagent = "slasherium";
 
     /// <summary>
     /// How much reagent to inject
     /// </summary>
-    [DataField]
+    [DataField("reagentAmount")]
     public float ReagentAmount = 10f;
 
     /// <summary>

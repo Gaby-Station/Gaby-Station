@@ -206,7 +206,7 @@
   equipment:
     head: ClothingHeadHatBeretEngineering
     mask: ClothingMaskBreath
-    neck: ClothingNeckCloakWhiteCe
+    neck: ClothingNeckCloakCe
     outerClothing: ClothingOuterWinterCE
     gloves: ClothingHandsGlovesColorYellow
     shoes: ClothingShoesBootsMagAdv

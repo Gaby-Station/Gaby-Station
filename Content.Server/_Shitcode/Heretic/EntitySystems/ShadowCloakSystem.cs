@@ -1,18 +1,42 @@
+using Content.Server.Buckle.Systems;
 using Content.Server.IdentityManagement;
 using Content.Shared._Shitcode.Heretic.Components;
 using Content.Shared._Shitcode.Heretic.Systems;
 using Content.Goobstation.Maths.FixedPoint;
-using Robust.Shared.Timing;
+using Content.Shared.Heretic;
+using Content.Shared.Interaction;
 
 namespace Content.Server.Heretic.EntitySystems;
 
 public sealed class ShadowCloakSystem : SharedShadowCloakSystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IdentitySystem _identity = default!;
+    [Dependency] private readonly ProtectiveBladeSystem _blade = default!;
 
-    private static readonly TimeSpan SustainedDamageReductionInterval = TimeSpan.FromSeconds(1);
-    private TimeSpan _nextUpdate = TimeSpan.Zero;
+    private const float SustainedDamageReductionInterval = 1f;
+    private float _accumulator;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        SubscribeLocalEvent<ShadowCloakEntityComponent, InteractHandEvent>(OnInteractHand,
+            after: [typeof(BuckleSystem)]);
+    }
+
+    private void OnInteractHand(Entity<ShadowCloakEntityComponent> ent, ref InteractHandEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        var parent = Transform(ent).ParentUid;
+
+        if (args.User != parent)
+            return;
+
+        if (_blade.TryThrowProtectiveBlade(parent, null))
+            args.Handled = true;
+    }
 
     protected override void Startup(Entity<ShadowCloakedComponent> ent)
     {
@@ -32,14 +56,28 @@ public sealed class ShadowCloakSystem : SharedShadowCloakSystem
     {
         base.Update(frameTime);
 
-        var now = _timing.CurTime;
+        var shadowEntityQuery = AllEntityQuery<ShadowCloakEntityComponent>();
+        while (shadowEntityQuery.MoveNext(out var uid, out var comp))
+        {
+            if (comp.DeletionAccumulator == null)
+                continue;
 
-        if (_nextUpdate > now)
+            comp.DeletionAccumulator -= frameTime;
+
+            if (comp.DeletionAccumulator > 0)
+                continue;
+
+            QueueDel(uid);
+        }
+
+        _accumulator += frameTime;
+
+        if (_accumulator < SustainedDamageReductionInterval)
             return;
 
-        _nextUpdate = now + SustainedDamageReductionInterval;
+        _accumulator = 0f;
 
-        var shadowCloakedQuery = EntityQueryEnumerator<ShadowCloakEntityComponent>();
+        var shadowCloakedQuery = EntityQueryEnumerator<ShadowCloakedComponent>();
         while (shadowCloakedQuery.MoveNext(out _, out var comp))
         {
             comp.SustainedDamage =

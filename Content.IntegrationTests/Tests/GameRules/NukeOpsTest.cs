@@ -322,8 +322,7 @@ public sealed class NukeOpsTest
                 var resp = entMan.GetComponent<RespiratorComponent>(player);
                 Assert.That(resp.SuffocationCycles, Is.LessThanOrEqualTo(resp.SuffocationCycleThreshold));
             }
-            Assert.That(damage.TotalDamage, Is.
-                AtMost((FixedPoint2) 1.0)); // Goobstation i cant believe you've done this
+            Assert.That(damage.TotalDamage, Is.EqualTo(FixedPoint2.Zero));
         }
 
         // Check that the round does not end prematurely when agents are deleted in the outpost

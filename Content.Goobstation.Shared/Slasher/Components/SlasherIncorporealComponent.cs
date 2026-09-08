@@ -65,9 +65,6 @@ public sealed partial class SlasherIncorporealComponent : Component
     [ViewVariables]
     public TimeSpan? IncorporealStartTime;
 
-    [ViewVariables]
-    public HashSet<string> AddedIncorporealComponents = new();
-
     /// <summary>
     /// Effect spawned when entering incorporeal state.
     /// </summary>

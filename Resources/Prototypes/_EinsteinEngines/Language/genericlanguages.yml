@@ -305,7 +305,6 @@
   speech:
     allowRadio: false
     requireSpeech: false
-    requireSight: true # Goob - the blind dont see
     requireLOS: true # Floofstation - Check Line-Of-Sight
     color: "#dddddd"
     messageWrapOverrides:
