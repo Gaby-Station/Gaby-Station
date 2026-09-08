@@ -30,11 +30,6 @@ namespace Content.Server.PDA
             }
 
             if (notiGroupProto.Access is null && notiGroupProto.AccessGroups is null) {
-                if (notiGroupProto.Exclude is { } exclusion) {
-                    PdaNotifyAll(args, exclusion);
-                    return;
-                }
-
                 PdaNotifyAll(args);
                 return;
             }
@@ -101,14 +96,11 @@ namespace Content.Server.PDA
             return false;
         }
 
-        public void PdaNotifyAll(PdaNotificationEvent args, HashSet<ProtoId<AccessLevelPrototype>>? exclude = null) {
+        public void PdaNotifyAll(PdaNotificationEvent args) {
             var query = EntityQueryEnumerator<PdaComponent>();
 
             while (query.MoveNext(out var uid, out var comp)) {
                 if (!IsValidPda(args, uid, comp, out var accessLevels) || accessLevels is null)
-                    continue;
-
-                if (exclude is { } exclusion && accessLevels.Intersect(exclusion).Any())
                     continue;
 
                 NotifyPda((uid, comp), args.Message, args.IsLoud);
