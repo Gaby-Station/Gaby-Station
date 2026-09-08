@@ -27,7 +27,7 @@
     woundVisibility: Always
     scarWound: BluntScar
     mangleSeverity: Severe
-
+    integrityMultiplier: 0.5 #heheheha
   - type: TraumaInflicter
     severityThreshold: 12
     allowedTraumas:
@@ -65,6 +65,7 @@
     woundType: External
     woundVisibility: Always
     scarWound: PiercingScar
+    integrityMultiplier: 0.1
     mangleSeverity: Severe
   - type: TraumaInflicter
     severityThreshold: 12
@@ -102,6 +103,7 @@
     woundType: External
     woundVisibility: Always
     scarWound: PiercingScar
+    integrityMultiplier: 0.15
     selfHealMultiplier: 0
   - type: TraumaInflicter
     severityThreshold: 6
@@ -136,6 +138,7 @@
     woundType: External
     woundVisibility: Always
     scarWound: SlashScar
+    integrityMultiplier: 0.17
     mangleSeverity: Severe
   - type: TraumaInflicter
     severityThreshold: 9
@@ -169,6 +172,7 @@
     woundType: External
     woundVisibility: Always
     scarWound: BurnScar
+    integrityMultiplier: 0.4 # boiling people
   - type: TraumaInflicter
     severityThreshold: 17
     allowedTraumas:
@@ -202,6 +206,7 @@
     woundType: External
     woundVisibility: Always
     scarWound: BurnScar
+    integrityMultiplier: 0.34 # boiling people
   - type: TraumaInflicter
     severityThreshold: 17
     allowedTraumas:
@@ -232,6 +237,7 @@
     woundType: External
     woundVisibility: Always
     scarWound: BurnScar
+    integrityMultiplier: 0.34
   - type: TraumaInflicter
     severityThreshold: 12
     allowedTraumas:
@@ -254,6 +260,7 @@
     damageType: Holy
     woundType: Internal
     woundVisibility: AdvancedScanner
+    integrityMultiplier: 0
   - type: TraumaInflicter
     severityThreshold: 0
     allowedTraumas:
@@ -276,6 +283,7 @@
     woundType: Internal
     woundVisibility: HandScanner
     scarWound: BurnScar
+    integrityMultiplier: 0.07
   - type: TraumaInflicter
     severityThreshold: 9
     allowedTraumas:
@@ -300,6 +308,7 @@
     woundType: Internal
     woundVisibility: AdvancedScanner
     scarWound: BurnScar
+    integrityMultiplier: 0.15
     selfHealMultiplier: 0
   - type: TraumaInflicter
     severityThreshold: 0
@@ -327,6 +336,7 @@
     woundType: Internal
     woundVisibility: AdvancedScanner
     scarWound: BurnScar
+    integrityMultiplier: 0
   - type: TraumaInflicter
     severityThreshold: 12
     allowedTraumas:
@@ -351,6 +361,7 @@
     woundType: Internal
     woundVisibility: HandScanner
     scarWound: RadiationScar
+    integrityMultiplier: 0
     selfHealMultiplier: 0
   - type: TraumaInflicter
     severityThreshold: 11
@@ -378,6 +389,7 @@
     damageType: Poison
     woundType: Internal
     woundVisibility: HandScanner
+    integrityMultiplier: 0
   - type: TraumaInflicter
     severityThreshold: 7
     allowedTraumas:

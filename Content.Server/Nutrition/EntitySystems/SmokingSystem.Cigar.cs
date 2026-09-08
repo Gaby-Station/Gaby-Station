@@ -43,16 +43,7 @@ namespace Content.Server.Nutrition.EntitySystems
                 return;
 
             if (smokable.State != SmokableState.Lit)
-            {
-                // Goob - This makes self igniting cigars re-ignitable, this is intentional.
-                if (TryComp(entity, out CigarComponent? cigar) && cigar.SelfIgniting)
-                {
-                    SetSmokableState(entity, SmokableState.Lit, smokable);
-                    args.Handled = true;
-                }
-
                 return;
-            }
 
             SetSmokableState(entity, SmokableState.Burnt, smokable);
             args.Handled = true;
@@ -73,9 +64,6 @@ namespace Content.Server.Nutrition.EntitySystems
             RaiseLocalEvent(args.Used, isHotEvent, false);
 
             if (!isHotEvent.IsHot)
-                return;
-
-            if (TryComp(entity, out CigarComponent? cigar) && cigar.SelfIgniting) // goob
                 return;
 
             SetSmokableState(entity, SmokableState.Lit, smokable);

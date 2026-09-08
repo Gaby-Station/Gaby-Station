@@ -9,6 +9,3 @@ secretplus-admeme-description = If it can happen, it will.
 
 survivalplus-title = Survival+
 survivalplus-description = Starts pretty calm. Ends up not quite.
-
-secretplus-lowpop-title= Secret+ Lowpop
-secretplus-lowpop-description= More active less threatening. For skeleton crews.

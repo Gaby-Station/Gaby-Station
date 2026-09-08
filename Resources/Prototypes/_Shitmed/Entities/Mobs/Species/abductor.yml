@@ -74,8 +74,6 @@
   - type: SurgeryTarget
   - type: Bloodstream
     bloodReagent: AlienBlood
-  - type: GrabIntent #goob
-  - type: Grabbable #goob
 
 - type: entity
   parent: BaseSpeciesDummy

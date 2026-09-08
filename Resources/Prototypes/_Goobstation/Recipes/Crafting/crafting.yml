@@ -13,11 +13,3 @@
   category: construction-category-misc
   targetNode: stack
   objectType: Item
-
-- type: construction
-  id: TileCanvas
-  graph: TileCanvas
-  category: construction-category-tiles
-  startNode: start
-  targetNode: canvastile
-  objectType: Item

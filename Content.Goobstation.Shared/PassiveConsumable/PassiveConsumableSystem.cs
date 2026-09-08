@@ -83,11 +83,10 @@ public sealed class PassiveConsumableSystem : EntitySystem
 
         foreach (var (uid, edible, user, delete) in finished)
         {
+            _ingestion.SpawnTrash((uid, edible), user);
+
             if (delete)
-            {
-                _ingestion.SpawnTrash((uid, edible), user);
                 QueueDel(uid);
-            }
         }
     }
 

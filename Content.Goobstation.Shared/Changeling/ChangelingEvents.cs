@@ -12,9 +12,6 @@ public sealed partial class AwakenedInstinctPurchasedEvent : EntityEventArgs;
 public sealed partial class ChameleonSkinPurchasedEvent : EntityEventArgs;
 
 [DataDefinition]
-public sealed partial class DarknessAdaptionPurchasedEvent : EntityEventArgs;
-
-[DataDefinition]
 public sealed partial class VoidAdaptionPurchasedEvent : EntityEventArgs;
 
 #endregion

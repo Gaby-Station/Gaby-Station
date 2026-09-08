@@ -31,7 +31,6 @@ public sealed class MadnessMaskSystem : EntitySystem
     [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly HereticSystem _heretic = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
 
     public override void Initialize()
     {
@@ -96,23 +95,18 @@ public sealed class MadnessMaskSystem : EntitySystem
                 if (_heretic.IsHereticOrGhoul(look))
                     continue;
 
-                if (!mask.AffectWearer
-                    && _inventory.TryGetContainingEntity(uid, out var wearer)
-                    && look == wearer)
-                    continue;
+                if (HasComp<StaminaComponent>(look) && _random.Prob(.4f))
+                    _stamina.TakeOvertimeStaminaDamage(look, 10f);
 
-                if (HasComp<StaminaComponent>(look) && _random.Prob(mask.StaminaProb))
-                    _stamina.TakeOvertimeStaminaDamage(look, mask.StaminaDamage);
-
-                if (_random.Prob(mask.JitterProb))
+                if (_random.Prob(.4f))
                     _jitter.DoJitter(look, TimeSpan.FromSeconds(.5f), true, amplitude: 5, frequency: 10);
 
-                if (_random.Prob(mask.RainbowProb))
+                if (_random.Prob(.25f))
                 {
                     _statusEffect.TryAddStatusEffectDuration(look,
                         "StatusEffectSeeingRainbow",
                         out _,
-                        mask.RainbowDuration);
+                        TimeSpan.FromSeconds(10f));
                 }
             }
         }
