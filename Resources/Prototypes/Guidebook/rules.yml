@@ -780,7 +780,7 @@
   name: guide-entry-space-law-occultism
   ruleEntry: true
   priority: 1
-  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/occultismo.xml"
+  text: "/ServerInfo/_Gabystation/Guidebook/SpaceLawSubEntries/ocultismo.xml"
 
 - type: guideEntry
   id: producaoProibida
