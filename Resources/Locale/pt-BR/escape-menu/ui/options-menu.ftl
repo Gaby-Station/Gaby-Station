@@ -24,7 +24,7 @@ ui-options-general-cursor = Cursor
 ui-options-general-speech = Fala
 ui-options-general-storage = Armazenamento
 ui-options-general-accessibility = Acessibilidade
-ui-options-show-offer-mode-indicators = Mostrar indicador ofertas de itens
+ui-options-show-offer-mode-indicators = Mostrar indicador de ofertas de itens
 
 ## Audio menu
 
@@ -44,7 +44,7 @@ ui-options-volume-label = Volume
 # Goobstation - Highlight Volume
 ui-options-highlight-volume = Volume de ping em destaque no chat:
 
-ui-options-hear-self = Escutar à sí mesmo
+ui-options-hear-self = Ouvir a própria voz
 
 ## Graphics menu
 
