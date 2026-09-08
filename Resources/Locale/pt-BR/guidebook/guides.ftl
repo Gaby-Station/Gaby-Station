@@ -52,6 +52,7 @@ guide-entry-forensics = Forensics
 guide-entry-defusal = Desativação de Bomba Grande
 guide-entry-criminal-records = Registros Criminais
 guide-entry-species = Espécies
+guide-entry-xenobiology = Xenobiologia
 
 guide-entry-thermomachies = Máquinas térmicas
 
@@ -62,6 +63,13 @@ guide-entry-zombies = Zumbis
 guide-entry-revolutionaries = Revolucionários
 guide-entry-minor-antagonists = Antagonistas Menores
 guide-entry-space-ninja = Ninja Espacial
+guide-entry-corporate-agent = Agente Corporativo
+guide-entry-bingle = Bingle
+guide-entry-changeling = Metamorfo
+guide-entry-changeling-abilities = Habilidades de Metamorfo
+guide-entry-devil = Diabo
+guide-entry-devil-clause = Clausulas do Diabo
+guide-entry-slasher = Slasher # Não tem tradução boa pra isso
 
 guide-entry-writing = Escrita
 guide-entry-lei-espacial = Lei Espacial

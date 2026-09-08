@@ -138,6 +138,7 @@ guide-entry-defusal = Large Bomb Defusal
 guide-entry-criminal-records = Criminal Records
 guide-entry-command = Command
 guide-entry-service = Service
+guide-entry-xenobiology = Xenobiology
 
 guide-entry-newplayer = New? Start here!
 guide-entry-charactercreation = Creating Characters
@@ -257,3 +258,11 @@ guide-entry-rules-ban-durations = Ban Durations
 
 guide-entry-writing = Writing
 guide-entry-glossary = Glossary
+
+guide-entry-corporate-agent = Corporate Agent
+guide-entry-bingle = Bingle
+guide-entry-changeling = Changeling
+guide-entry-devil = Devil
+guide-entry-devil-clause = Devil Clauses
+guide-entry-slasher = Slasher
+guide-entry-slasher-demon = Dêmonio do Slasher
