@@ -4027,3 +4027,9 @@ Entries:
       message: Goob merge até 08/06, verifique as mudanças do goob!
   id: 475
   time: '2026-09-08T04:52:13.0000000+00:00'
+- author: SukitaBR
+  changes:
+    - type: Add
+      message: Adicionado novo plushie
+  id: 476
+  time: '2026-09-08T05:23:23.0000000+00:00'
