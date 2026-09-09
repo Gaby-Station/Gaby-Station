@@ -74,9 +74,9 @@
   description: Shootouts with syndicate agents are just another Tuesday for this HoS. This mantle is a symbol of commitment to the station.
   components:
   - type: Sprite
-    sprite: _Goobstation/Clothing/Neck/Mantle/hosmantle.rsi # Goob Station - mantle resprite
+    sprite: Clothing/Neck/mantles/hosmantle.rsi
   - type: Clothing
-    sprite: _Goobstation/Clothing/Neck/Mantle/hosmantle.rsi # Goob Station - mantle resprite
+    sprite: Clothing/Neck/mantles/hosmantle.rsi
 
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
