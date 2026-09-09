@@ -30,8 +30,7 @@ public sealed class SlasherKitCard : Control
             };
 
             if (!tile)
-                texture.SetPatchMargin(StyleBox.Margin.All, 2);
-
+                texture.SetPatchMargin(StyleBox.Margin.Left, 1);
             return texture;
         }
 
