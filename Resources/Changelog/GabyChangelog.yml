@@ -4033,3 +4033,9 @@ Entries:
       message: Adicionado novo plushie
   id: 476
   time: '2026-09-08T05:23:23.0000000+00:00'
+- author: isTheSuperN0va
+  changes:
+    - type: Add
+      message: adicionado a central de notificações do pda
+  id: 477
+  time: '2026-09-08T17:14:07.0000000+00:00'

@@ -144,18 +144,6 @@ public sealed partial class PaperComponent : Component
         }
     }
 
-    // Starlight-start
-    [Serializable, NetSerializable]
-    public sealed class PaperSignatureRequestMessage : BoundUserInterfaceMessage
-    {
-        public readonly int SignatureIndex;
-
-        public PaperSignatureRequestMessage(int signatureIndex)
-        {
-            SignatureIndex = signatureIndex;
-        }
-    }
-    // Starlight-end
     [Serializable, NetSerializable]
     public enum PaperUiKey
     {

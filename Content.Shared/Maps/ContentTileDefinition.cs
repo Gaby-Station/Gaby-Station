@@ -197,11 +197,5 @@ namespace Content.Shared.Maps
 
         [DataField]
         public bool SimulatedTurf = true;
-
-        /// <summary>
-        /// If true, decals on this tile cannot be cleaned by mops or space cleaner.
-        /// </summary>
-        [DataField]
-        public bool ProtectDecals = false; // Goob
     }
 }

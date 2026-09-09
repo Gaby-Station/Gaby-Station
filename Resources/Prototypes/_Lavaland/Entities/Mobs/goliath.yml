@@ -14,14 +14,6 @@
         Base: goliath
       Dead:
         Base: goliath_dead
-  - type: HTN
-    blackboard:
-      VisionRadius: !type:Single # Highly aggressive
-        8
-      AggroVisionRadius: !type:Single
-        9
-      NavSmash: !type:Bool
-        true
 
 - type: entity
   id: MobLavalandGoliathAncient
@@ -58,9 +50,12 @@
   #    0: Alive
   #    400: Dead
   - type: HTN
+    constantlyReplan: false
+    rootTask:
+      task: GoliathCompound
     blackboard:
-      VisionRadius: !type:Single # Extremely aggressive
-        9
+      VisionRadius: !type:Single
+        6
       AggroVisionRadius: !type:Single
         10
       NavSmash: !type:Bool

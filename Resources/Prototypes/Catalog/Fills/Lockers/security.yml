@@ -267,7 +267,6 @@
     - id: Betty # Goobstation
     - id: BoxTapeRecorder # DeltaV
     - id: PoliceBaton # Goobstation
-    - id: ObraDinnClock # Goobstation
     - id: CassetteTapeInterview # Gabystation - lore
       prob: 0.25
     - id: PhotoCameraFilled # CorvaxGoob-PhotoCamera

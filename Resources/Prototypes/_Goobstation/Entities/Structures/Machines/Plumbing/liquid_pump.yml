@@ -63,8 +63,6 @@
     interfaces:
       enum.PlumbingFilterUiKey.Key:
         type: PlumbingFilterBUI
-      enum.TransferAmountUiKey.Key:
-        type: TransferAmountBoundUserInterface
   # Guide
   - type: GuideHelp
     guides:

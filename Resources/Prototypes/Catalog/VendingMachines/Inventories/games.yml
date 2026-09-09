@@ -37,7 +37,6 @@
     MysteryFigureBox: 2
     BooksBag: 3
     CardBoxBlack: 3 # GoobStation
-    PokerChips100: 6 # GoobStation
     CardBoxNuno: 2 # GabyStation
   contrabandInventory:
     Basketball: 1

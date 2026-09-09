@@ -18,34 +18,35 @@ namespace Content.Goobstation.Shared.Xenobiology.Components;
 public sealed partial class SlimeComponent : Component
 {
     /// <summary>
+    /// Default slime.
+    /// </summary>
+    [DataField]
+    public EntProtoId DefaultSlimeProto = "MobSlimeXenobioBaby";
+
+    /// <summary>
     /// What color is the slime?
     /// </summary>
     [DataField, AutoNetworkedField]
     public Color SlimeColor = Color.FromHex("#FFFFFF");
 
     /// <summary>
-    /// The intended proto ID of this slime, used for mitosis process.
-    /// </summary>
-    [DataField(required: true), AutoNetworkedField]
-    public EntProtoId Breed = "GreyMutation";
-
-    /// <summary>
     /// What is the current slime's current breed?
     /// </summary>
     [DataField(required: true), AutoNetworkedField]
-    public LocId BreedName = "xenobio-breed-grey";
+    public ProtoId<BreedPrototype> Breed = "GreyMutation";
 
     /// <summary>
-    /// The extract produced when this breed is ground.
+    /// If the associated breed prototype cannot be found,
+    /// it will use this extract as a fallback.
     /// </summary>
     [DataField]
-    public EntProtoId ProducedExtract = "GreySlimeExtract";
+    public EntProtoId DefaultExtract = "GreySlimeExtract";
 
     /// <summary>
     /// If the mutation chance is met, what potential mutations are available?
     /// </summary>
     [DataField, AutoNetworkedField]
-    public HashSet<EntProtoId> PotentialMutations = new();
+    public HashSet<ProtoId<BreedPrototype>> PotentialMutations = new();
 
     /// <summary>
     /// The stomach! Holds all consumed entities to be consumed.
@@ -128,6 +129,12 @@ public sealed partial class SlimeComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public float JitterDifference = 25f;
+
+    /// <summary>
+    /// Should this slime have a shader?
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool ShouldHaveShader;
 
     /// <summary>
     /// Which shader are we using?

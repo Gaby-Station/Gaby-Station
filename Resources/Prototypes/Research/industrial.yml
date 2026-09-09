@@ -175,6 +175,7 @@
   - LatheUpgradeKitCryo
   # End DeltaV Additions
   # Begin Goobstation Additions
+  - UpgradeKitAutomation
   - RoboticArmCircuitboard
   - ConstructorCircuitboard
   - StorageBinCircuitboard

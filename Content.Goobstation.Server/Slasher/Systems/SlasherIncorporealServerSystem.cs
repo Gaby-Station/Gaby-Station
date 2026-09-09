@@ -1,22 +1,26 @@
-using Content.Goobstation.Shared.Contraband;
+// SPDX-FileCopyrightText: 2026 Goob Station Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Goobstation.Shared.Slasher.Components;
-using Content.Goobstation.Shared.Slasher;
-using Content.Server.Atmos;
-using Content.Server.Atmos.EntitySystems;
-using Content.Server.Light.Components;
-using Content.Server.Light.EntitySystems;
+using Content.Goobstation.Shared.Slasher.Events;
 using Content.Server.Singularity.Events;
 using Content.Server.SurveillanceCamera;
-using Content.Shared.Atmos;
+using Content.Server.Light.Components;
+using Content.Server.Light.EntitySystems;
+using Content.Server.Atmos.EntitySystems;
 using Content.Shared.Atmos.Components;
+using Content.Server.Atmos;
 using Content.Shared.Interaction;
+using Content.Shared.Physics;
 using Content.Shared.Light;
 using Content.Shared.Light.Components;
 using Content.Shared.Light.EntitySystems;
-using Content.Shared.Physics;
+using Content.Shared.Atmos;
 using Robust.Server.GameObjects;
-using Robust.Shared.Physics.Events;
 using Robust.Shared.Spawners;
+using Robust.Shared.Physics.Events;
+using Content.Goobstation.Shared.Contraband;
 
 namespace Content.Goobstation.Server.Slasher.Systems;
 

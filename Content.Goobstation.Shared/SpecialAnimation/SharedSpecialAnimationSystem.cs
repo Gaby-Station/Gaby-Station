@@ -5,7 +5,6 @@
 
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
 
 namespace Content.Goobstation.Shared.SpecialAnimation;
 
@@ -14,27 +13,21 @@ namespace Content.Goobstation.Shared.SpecialAnimation;
 /// </summary>
 public abstract class SharedSpecialAnimationSystem : EntitySystem
 {
-    public virtual void PlayAnimationForEntity(
-        SpriteSpecifier sprite,
+    public abstract void PlayAnimationForEntity(
+        EntityUid sprite,
         EntityUid player,
         SpecialAnimationData? animationData = null,
-        string? overrideText = null)
-    {
-    }
+        string? overrideText = null);
 
-    public virtual void PlayAnimationFiltered(
-        SpriteSpecifier sprite,
+    public abstract void PlayAnimationFiltered(
+        EntityUid sprite,
         Filter filter,
         SpecialAnimationData? animationData = null,
-        string? overrideText = null)
-    {
-    }
+        string? overrideText = null);
 
-    public virtual void PlayAnimationFiltered(
-        SpriteSpecifier sprite,
+    public abstract void PlayAnimationFiltered(
+        EntityUid sprite,
         Filter filter,
         ProtoId<SpecialAnimationPrototype>? animationData = null,
-        string? overrideText = null)
-    {
-    }
+        string? overrideText = null);
 }

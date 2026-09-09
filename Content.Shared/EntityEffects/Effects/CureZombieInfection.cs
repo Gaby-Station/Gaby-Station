@@ -7,9 +7,6 @@ public sealed partial class CureZombieInfection : EventEntityEffect<CureZombieIn
     [DataField]
     public bool Innoculate;
 
-    [DataField]
-    public bool CureCriticalZombies; // Goob - whether it cures zombies in a critical state or under
-
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
         if(Innoculate)
