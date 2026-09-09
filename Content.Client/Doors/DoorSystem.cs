@@ -116,6 +116,7 @@ public sealed class DoorSystem : SharedDoorSystem
 
                 foreach (var (layer, layerState) in ent.Comp.OpenSpriteStates)
                 {
+                    _sprite.LayerSetAutoAnimated((ent.Owner, sprite), layer, true);
                     _sprite.LayerSetRsiState((ent.Owner, sprite), layer, layerState);
                 }
 
@@ -124,6 +125,7 @@ public sealed class DoorSystem : SharedDoorSystem
 
                 foreach (var (layer, layerState) in ent.Comp.ClosedSpriteStates)
                 {
+                    _sprite.LayerSetAutoAnimated((ent.Owner, sprite), layer, true);
                     _sprite.LayerSetRsiState((ent.Owner, sprite), layer, layerState);
                 }
 
@@ -194,6 +196,9 @@ public sealed class DoorSystem : SharedDoorSystem
                 if (_animationSystem.HasRunningAnimation(entity, DoorComponent.OpenKey))
                     return;
 
+                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.CloseKey))
+                    _animationSystem.Stop(entity.Owner, DoorComponent.CloseKey);
+
                 _animationSystem.Play(entity, (Animation)entity.Comp.OpeningAnimation, DoorComponent.OpenKey);
 
                 return;
@@ -203,6 +208,9 @@ public sealed class DoorSystem : SharedDoorSystem
 
                 if (_animationSystem.HasRunningAnimation(entity, DoorComponent.CloseKey))
                     return;
+
+                if (_animationSystem.HasRunningAnimation(entity, DoorComponent.OpenKey))
+                    _animationSystem.Stop(entity.Owner, DoorComponent.OpenKey);
 
                 _animationSystem.Play(entity, (Animation)entity.Comp.ClosingAnimation, DoorComponent.CloseKey);
 
