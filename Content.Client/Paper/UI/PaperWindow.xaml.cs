@@ -273,7 +273,8 @@ namespace Content.Client.Paper.UI
                 _paperContentLineScale = visuals.ContentImageNumLines;
             }
 
-            PaperContent.Margin = ToThickness(visuals.ContentMargin);
+            _originalContentMargin = ToThickness(visuals.ContentMargin); 
+            PaperContent.Margin = _originalContentMargin; 
 
             if (visuals.MaxWritableArea != null)
             {
