@@ -50,10 +50,9 @@ public sealed class DeathCutsceneSystem : EntitySystem
         _overlay.AddOverlay(_current);
 
         if (msg.SuppressAmbientMusic)
-            _contentAudio.DisableAmbientMusic();
+            _contentAudio.SetAmbientMusicSuppressed(true);
 
-        if (msg.Sound != null)
-            _audio.PlayGlobal(msg.Sound, Filter.Local(), false);
+        _audio.PlayGlobal(msg.Sound, Filter.Local(), false);
     }
 
     private void OnStopDeathCutscene(StopDeathCutsceneEvent msg)
@@ -68,5 +67,7 @@ public sealed class DeathCutsceneSystem : EntitySystem
 
         _overlay.RemoveOverlay(_current);
         _current = null;
+
+        _contentAudio.SetAmbientMusicSuppressed(false);
     }
 }
