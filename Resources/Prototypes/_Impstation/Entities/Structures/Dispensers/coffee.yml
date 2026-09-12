@@ -24,6 +24,21 @@
     - Drinks
   - type: StealTarget
     stealGroup: BoozeDispenser
+  - type: Storage
+    openOnActivate: false
+    whitelist:
+      tags:
+      - CoffeeDispensable
+  - type: StorageFill
+    contents:
+      - id: DrinkCoffeeJug
+      - id: DrinkCreamCartonXL
+      - id: DrinkSugarJug
+      - id: DrinkIceJug
+      - id: DrinkMilkCarton
+      - id: DrinkSoyMilkCarton
+      # - id: JugCaramexinin
+      - id: JugCocoa
 
 - type: entity
   id: ImpCoffeeMachineEmpty
@@ -31,3 +46,4 @@
   parent: ImpCoffeeMachine
   components:
   - type: ReagentDispenser
+  - type: StorageFill

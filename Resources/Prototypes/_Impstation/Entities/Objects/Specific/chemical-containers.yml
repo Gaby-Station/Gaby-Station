@@ -15,6 +15,9 @@
   - type: Drink
   - type: Label
     currentLabel: reagent-name-cocoapowder
+  - type: Tag
+    tags:
+      - CoffeeDispensable
 
 - type: entity
   parent: DrinkBase
