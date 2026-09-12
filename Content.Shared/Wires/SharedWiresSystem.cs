@@ -46,6 +46,7 @@ public abstract class SharedWiresSystem : EntitySystem
     [Dependency] private readonly ActivatableUISystem _activatableUI = default!;
     [Dependency] protected readonly SharedAppearanceSystem Appearance = default!;
     [Dependency] protected readonly SharedAudioSystem Audio = default!;
+    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] protected readonly SharedToolSystem Tool = default!;
     [Dependency] protected readonly SharedUserInterfaceSystem UI = default!;
 
@@ -166,7 +167,14 @@ public abstract class SharedWiresSystem : EntitySystem
 
     private void OnGetVerbs(Entity<WiresPanelComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
     {
+        if (!args.CanAccess || !args.CanInteract)
+            return;
+
         if (!IsPanelOpen(ent.Owner))
+            return;
+
+        var range = UI.GetUiRange(ent.Owner, WiresUiKey.Key);
+        if (range > 0 && !_interaction.InRangeUnobstructed(args.User, ent.Owner, range))
             return;
 
         var actor = args.User;
